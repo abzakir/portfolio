@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Reveal, { Stagger, StaggerItem } from "@/components/ui/Reveal";
+import IconRenderer from "@/components/ui/IconRenderer";
 import { achievements } from "@/lib/data";
 import { X } from "lucide-react";
 
@@ -53,13 +55,19 @@ export default function Achievements() {
                 {/* Top row */}
                 <div className="flex items-start justify-between mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden"
                     style={{
                       background: `${achievement.color}15`,
                       border: `1px solid ${achievement.color}30`,
                     }}
                   >
-                    {achievement.icon}
+                    {"image" in achievement && achievement.image ? (
+                      <div className="relative w-7 h-7 flex items-center justify-center">
+                        <Image src={achievement.image as string} alt={achievement.title} width={28} height={28} className="object-contain" />
+                      </div>
+                    ) : (
+                      <IconRenderer name={achievement.icon} size={20} color={achievement.color} />
+                    )}
                   </div>
 
                   <div className="flex flex-col items-end gap-1.5">
@@ -133,13 +141,19 @@ export default function Achievements() {
               >
                 <div className="flex items-start justify-between mb-6">
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden"
                     style={{
                       background: `${selected.color}15`,
                       border: `2px solid ${selected.color}40`,
                     }}
                   >
-                    {selected.icon}
+                    {"image" in selected && selected.image ? (
+                      <div className="relative w-9 h-9 flex items-center justify-center">
+                        <Image src={selected.image as string} alt={selected.title} width={36} height={36} className="object-contain" />
+                      </div>
+                    ) : (
+                      <IconRenderer name={selected.icon} size={28} color={selected.color} />
+                    )}
                   </div>
                   <button
                     onClick={() => setSelected(null)}

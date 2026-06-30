@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Reveal from "@/components/ui/Reveal";
+import IconRenderer from "@/components/ui/IconRenderer";
 import { timeline } from "@/lib/data";
 
 function TimelineNode({ item, index, isLast }: { item: typeof timeline[0]; index: number; isLast: boolean }) {
@@ -21,7 +22,7 @@ function TimelineNode({ item, index, isLast }: { item: typeof timeline[0]; index
       <div className="flex flex-col items-center flex-shrink-0">
         {/* Node */}
         <motion.div
-          className="relative w-14 h-14 rounded-2xl flex items-center justify-center text-xl z-10 flex-shrink-0"
+          className="relative w-14 h-14 rounded-2xl flex items-center justify-center z-10 flex-shrink-0"
           style={{
             background: `${item.color}15`,
             border: `2px solid ${item.color}40`,
@@ -29,7 +30,7 @@ function TimelineNode({ item, index, isLast }: { item: typeof timeline[0]; index
           whileHover={{ scale: 1.1, rotate: 5 }}
           transition={{ type: "spring", stiffness: 400 }}
         >
-          {item.icon}
+          <IconRenderer name={item.icon} size={22} color={item.color} />
           <motion.div
             className="absolute inset-0 rounded-2xl"
             style={{ background: `${item.color}20` }}

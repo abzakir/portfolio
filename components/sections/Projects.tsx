@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import GlowCard from "@/components/ui/GlowCard";
+import IconRenderer from "@/components/ui/IconRenderer";
 import { projects } from "@/lib/data";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 
@@ -66,13 +67,13 @@ export default function Projects() {
                   {/* Header */}
                   <div className="flex items-start justify-between mb-5">
                     <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                       style={{
                         background: `${project.color}15`,
                         border: `1px solid ${project.color}30`,
                       }}
                     >
-                      {project.icon}
+                      <IconRenderer name={project.icon} size={22} color={project.color} />
                     </div>
 
                     <div className="flex items-center gap-2">

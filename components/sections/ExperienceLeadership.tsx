@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Reveal, { Stagger, StaggerItem } from "@/components/ui/Reveal";
 import GlowCard from "@/components/ui/GlowCard";
+import IconRenderer from "@/components/ui/IconRenderer";
 import { experience, leadership } from "@/lib/data";
 
 export default function ExperienceLeadership() {
@@ -46,10 +47,10 @@ export default function ExperienceLeadership() {
             >
               <div className="flex flex-col sm:flex-row sm:items-start gap-5">
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
                   style={{ background: `${exp.color}15`, border: `1px solid ${exp.color}30` }}
                 >
-                  {exp.icon}
+                  <IconRenderer name={exp.icon} size={22} color={exp.color} />
                 </div>
 
                 <div className="flex-1">
@@ -102,10 +103,10 @@ export default function ExperienceLeadership() {
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{ background: `${role.color}15`, border: `1px solid ${role.color}30` }}
                   >
-                    {role.icon}
+                    <IconRenderer name={role.icon} size={20} color={role.color} />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-white mb-0.5">{role.title}</h3>

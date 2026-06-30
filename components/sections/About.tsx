@@ -10,7 +10,7 @@ const highlights = [
   { icon: GraduationCap, label: "FAST NUCES", sub: "BS Computer Science · 2024–2029", color: "#6C63FF" },
   { icon: Code2, label: "5+ Projects", sub: "Games, AI, Web & Desktop", color: "#06B6D4" },
   { icon: Zap, label: "AI & CV", sub: "Python, MediaPipe, Computer Vision", color: "#8B5CF6" },
-  { icon: MapPin, label: "Islamabad", sub: "Pakistan 🇵🇰", color: "#F59E0B" },
+  { icon: MapPin, label: "Islamabad", sub: "Pakistan", color: "#F59E0B" },
 ];
 
 export default function About() {
@@ -75,7 +75,7 @@ export default function About() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
                   <div className="text-xs text-[#94A3B8]">Currently at</div>
-                  <div className="text-sm font-semibold text-white">FAST NUCES 🎓</div>
+                  <div className="text-sm font-semibold text-white">FAST NUCES</div>
                 </motion.div>
 
                 <motion.div
@@ -84,7 +84,7 @@ export default function About() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                 >
                   <div className="text-xs text-[#94A3B8]">Based in</div>
-                  <div className="text-sm font-semibold text-white">Islamabad 🇵🇰</div>
+                  <div className="text-sm font-semibold text-white">Islamabad</div>
                 </motion.div>
               </motion.div>
             </div>
@@ -129,12 +129,14 @@ export default function About() {
             <Reveal delay={0.4}>
               <div className="flex items-center gap-4 pt-2">
                 <span className="text-xs text-[#475569] font-mono uppercase tracking-wider">Languages:</span>
-                {personalInfo.languages.map((lang) => (
-                  <span key={lang.name} className="text-sm text-[#94A3B8] flex items-center gap-1">
-                    <span>{lang.flag}</span>
-                    <span>{lang.name}</span>
-                  </span>
-                ))}
+                <div className="flex flex-wrap items-center">
+                  {personalInfo.languages.map((lang, idx) => (
+                    <span key={lang.name} className="text-sm text-[#94A3B8] flex items-center">
+                      <span>{lang.name}</span>
+                      {idx < personalInfo.languages.length - 1 && <span className="text-white/20 mx-2">·</span>}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Reveal>
           </div>

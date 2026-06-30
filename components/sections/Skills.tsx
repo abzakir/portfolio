@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Reveal, { Stagger, StaggerItem } from "@/components/ui/Reveal";
+import IconRenderer from "@/components/ui/IconRenderer";
 import { skills } from "@/lib/data";
 
 type SkillCategory = "languages" | "tools" | "libraries";
@@ -86,9 +88,16 @@ export default function Skills() {
                   {[...skills.languages, ...skills.tools, ...skills.libraries].map((skill) => (
                     <span
                       key={skill.name}
-                      className="px-3 py-1 rounded-full text-xs glass border border-white/8 text-[#64748B] hover:text-white hover:border-[#6C63FF]/30 transition-all duration-200 cursor-default"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs glass border border-white/8 text-[#64748B] hover:text-white hover:border-[#6C63FF]/30 transition-all duration-200 cursor-default"
                     >
-                      {skill.icon} {skill.name}
+                      {"image" in skill && skill.image ? (
+                        <div className="relative w-3.5 h-3.5 flex items-center justify-center">
+                          <Image src={skill.image as string} alt={skill.name} width={14} height={14} className="object-contain" />
+                        </div>
+                      ) : (
+                        <IconRenderer name={skill.icon} size={10} color={skill.color} />
+                      )}
+                      {skill.name}
                     </span>
                   ))}
                 </div>
@@ -128,13 +137,19 @@ export default function Skills() {
                     <div className="relative z-10 flex items-center gap-4">
                       {/* Icon circle */}
                       <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
                         style={{
                           background: `${skill.color}15`,
                           border: `1px solid ${skill.color}30`,
                         }}
                       >
-                        {skill.icon}
+                        {"image" in skill && skill.image ? (
+                          <div className="relative w-7 h-7 flex items-center justify-center">
+                            <Image src={skill.image as string} alt={skill.name} width={28} height={28} className="object-contain" />
+                          </div>
+                        ) : (
+                          <IconRenderer name={skill.icon} size={20} color={skill.color} />
+                        )}
                       </div>
 
                       <div className="flex-1 min-w-0">

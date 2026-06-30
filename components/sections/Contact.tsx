@@ -160,7 +160,12 @@ export default function Contact() {
 
             {/* Resume download */}
             <Reveal delay={0.4} className="mt-8">
-              <MagneticButton variant="secondary" size="lg" className="w-full justify-center">
+              <MagneticButton
+                variant="secondary"
+                size="lg"
+                className="w-full justify-center"
+                href="/Abdul_Zakir_Resume_Premium.pdf"
+              >
                 <Download size={16} />
                 Download Resume (PDF)
               </MagneticButton>
@@ -177,9 +182,11 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
+                  className="text-center py-12 flex flex-col items-center justify-center"
                 >
-                  <div className="text-5xl mb-4">✅</div>
+                  <div className="w-16 h-16 bg-[#10B981]/10 border border-[#10B981]/30 rounded-full flex items-center justify-center text-[#10B981] mb-4">
+                    <Check size={28} />
+                  </div>
                   <h4 className="font-display font-bold text-xl text-white mb-2">Message sent!</h4>
                   <p className="text-[#64748B] text-sm">Thanks for reaching out. I'll get back to you soon.</p>
                   <button
