@@ -99,7 +99,7 @@ export const experience = [
   {
     title: "Contract Sales Representative",
     company: "State Life Insurance Corporation of Pakistan",
-    period: "2023",
+    period: "2026",
     type: "professional",
     icon: "💼",
     color: "#F59E0B",
@@ -299,7 +299,7 @@ export const timeline = [
   {
     year: "2023",
     title: "Builder Mode",
-    description: "STEAM Competition win with AI Skin Analysis. Founded ZBM Lifestyle e-commerce brand. First real professional experience at State Life Insurance.",
+    description: "STEAM Competition win with AI Skin Analysis. Founded ZBM Lifestyle e-commerce brand.",
     icon: "🚀",
     color: "#8B5CF6",
   },
@@ -316,6 +316,13 @@ export const timeline = [
     description: "FocusFlow desktop app, Hand Gesture Controller, Metal Slug & TumblePop clones. Deep dives into OOP, systems programming, and AI tooling.",
     icon: "⚡",
     color: "#06B6D4",
+  },
+  {
+    year: "2026",
+    title: "Professional Sales",
+    description: "Began contract role at State Life Insurance. Enhancing real-world negotiation, relationship management, and B2C communication.",
+    icon: "💼",
+    color: "#F59E0B",
   },
   {
     year: "→ 2029",
