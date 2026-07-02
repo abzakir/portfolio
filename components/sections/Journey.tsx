@@ -119,7 +119,7 @@ export default function Journey() {
             <Reveal delay={0.3} className="mt-10 space-y-4">
               <p className="text-xs font-mono text-[#475569] uppercase tracking-widest mb-4">Education</p>
               {[
-                { school: "FAST NUCES", degree: "BS Computer Science", grade: "2024–2029", color: "#6C63FF" },
+                { school: "FAST NUCES", degree: "BS Computer Science", grade: "2025–2029", color: "#6C63FF" },
                 { school: "Aga Khan HSS Hyderabad", degree: "Intermediate", grade: "91.6%", color: "#06B6D4" },
                 { school: "Public School Hyderabad", degree: "Matriculation", grade: "84.5%", color: "#8B5CF6" },
               ].map((edu, i) => (

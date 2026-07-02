@@ -7,7 +7,7 @@ import { personalInfo } from "@/lib/data";
 import { MapPin, GraduationCap, Code2, Zap } from "lucide-react";
 
 const highlights = [
-  { icon: GraduationCap, label: "FAST NUCES", sub: "BS Computer Science · 2024–2029", color: "#6C63FF" },
+  { icon: GraduationCap, label: "FAST NUCES", sub: "BS Computer Science · 2025–2029", color: "#6C63FF" },
   { icon: Code2, label: "5+ Projects", sub: "Games, AI, Web & Desktop", color: "#06B6D4" },
   { icon: Zap, label: "AI & CV", sub: "Python, MediaPipe, Computer Vision", color: "#8B5CF6" },
   { icon: MapPin, label: "Islamabad", sub: "Pakistan", color: "#F59E0B" },
