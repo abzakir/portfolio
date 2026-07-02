@@ -14,7 +14,7 @@ interface GlowCardProps {
 export default function GlowCard({
   children,
   className,
-  glowColor = "rgba(108, 99, 255, 0.15)",
+  glowColor = "rgba(138, 154, 91, 0.15)",
   tilt = true,
 }: GlowCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);

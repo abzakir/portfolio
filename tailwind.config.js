@@ -9,16 +9,16 @@ module.exports = {
     extend: {
       colors: {
         bg: {
-          primary: '#050508',
-          secondary: '#090912',
-          tertiary: '#0d0d1a',
+          primary: '#0B0C09',
+          secondary: '#12140F',
+          tertiary: '#1A1D15',
         },
         accent: {
-          violet: '#6C63FF',
-          purple: '#8B5CF6',
-          cyan: '#06B6D4',
-          amber: '#F59E0B',
-          rose: '#F43F5E',
+          violet: '#8A9A5B',
+          purple: '#66734F',
+          cyan: '#B6BE9C',
+          amber: '#C2A878',
+          rose: '#A56F5A',
         },
         glass: {
           DEFAULT: 'rgba(255,255,255,0.04)',
@@ -48,8 +48,8 @@ module.exports = {
           '50%': { transform: 'translateY(-20px)' },
         },
         pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(108,99,255,0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(108,99,255,0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(138,154,91,0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(138,154,91,0.6)' },
         },
         gradientX: {
           '0%, 100%': { backgroundPosition: '0% 50%' },

@@ -7,25 +7,25 @@ import { personalInfo } from "@/lib/data";
 import { MapPin, GraduationCap, Code2, Zap } from "lucide-react";
 
 const highlights = [
-  { icon: GraduationCap, label: "FAST NUCES", sub: "BS Computer Science · 2025–2029", color: "#6C63FF" },
-  { icon: Code2, label: "5+ Projects", sub: "Games, AI, Web & Desktop", color: "#06B6D4" },
-  { icon: Zap, label: "AI & CV", sub: "Python, MediaPipe, Computer Vision", color: "#8B5CF6" },
-  { icon: MapPin, label: "Islamabad", sub: "Pakistan", color: "#F59E0B" },
+  { icon: GraduationCap, label: "FAST NUCES", sub: "BS Computer Science · 2025–2029", color: "#8A9A5B" },
+  { icon: Code2, label: "5+ Projects", sub: "Games, AI, Web & Desktop", color: "#B6BE9C" },
+  { icon: Zap, label: "AI & CV", sub: "Python, MediaPipe, Computer Vision", color: "#66734F" },
+  { icon: MapPin, label: "Islamabad", sub: "Pakistan", color: "#C2A878" },
 ];
 
 export default function About() {
   return (
-    <div className="section-padding bg-[#050508] relative overflow-hidden">
+    <div className="section-padding bg-[#0B0C09] relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6C63FF]/4 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#8A9A5B]/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <Reveal>
           <div className="flex items-center gap-3 mb-16">
-            <span className="font-mono text-sm text-[#6C63FF]">01.</span>
-            <span className="font-mono text-sm text-[#475569]">about_me</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#6C63FF]/20 to-transparent" />
+            <span className="font-mono text-sm text-[#8A9A5B]">01.</span>
+            <span className="font-mono text-sm text-[#666B60]">about_me</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-[#8A9A5B]/20 to-transparent" />
           </div>
         </Reveal>
 
@@ -36,12 +36,12 @@ export default function About() {
               {/* Decorative rings */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <motion.div
-                  className="w-[340px] h-[340px] rounded-full border border-[#6C63FF]/15"
+                  className="w-[340px] h-[340px] rounded-full border border-[#8A9A5B]/15"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 />
                 <motion.div
-                  className="absolute w-[400px] h-[400px] rounded-full border border-[#06B6D4]/10"
+                  className="absolute w-[400px] h-[400px] rounded-full border border-[#B6BE9C]/10"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                 />
@@ -55,8 +55,8 @@ export default function About() {
               >
                 <div className="relative w-72 h-80 rounded-3xl overflow-hidden">
                   {/* Glow border */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#6C63FF] via-[#8B5CF6] to-[#06B6D4] p-[2px]">
-                    <div className="w-full h-full rounded-3xl overflow-hidden bg-[#090912]">
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#8A9A5B] via-[#66734F] to-[#B6BE9C] p-[2px]">
+                    <div className="w-full h-full rounded-3xl overflow-hidden bg-[#12140F]">
                       <Image
                         src="/my-pic.jpeg"
                         alt="Abdul Zakir"
@@ -74,7 +74,7 @@ export default function About() {
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
-                  <div className="text-xs text-[#94A3B8]">Currently at</div>
+                  <div className="text-xs text-[#B7B9AD]">Currently at</div>
                   <div className="text-sm font-semibold text-white">FAST NUCES</div>
                 </motion.div>
 
@@ -83,7 +83,7 @@ export default function About() {
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                 >
-                  <div className="text-xs text-[#94A3B8]">Based in</div>
+                  <div className="text-xs text-[#B7B9AD]">Based in</div>
                   <div className="text-sm font-semibold text-white">Islamabad</div>
                 </motion.div>
               </motion.div>
@@ -102,7 +102,7 @@ export default function About() {
             <Stagger className="space-y-5">
               {personalInfo.bio.map((para, i) => (
                 <StaggerItem key={i}>
-                  <p className="text-[#94A3B8] text-lg leading-relaxed">{para}</p>
+                  <p className="text-[#B7B9AD] text-lg leading-relaxed">{para}</p>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -113,7 +113,7 @@ export default function About() {
                 {personalInfo.interests.map((interest, i) => (
                   <motion.span
                     key={interest}
-                    className="skill-tag px-3 py-1.5 rounded-full text-xs font-medium glass border border-white/8 text-[#94A3B8] hover:text-white hover:border-[#6C63FF]/40 cursor-default"
+                    className="skill-tag px-3 py-1.5 rounded-full text-xs font-medium glass border border-white/8 text-[#B7B9AD] hover:text-white hover:border-[#8A9A5B]/40 cursor-default"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -128,10 +128,10 @@ export default function About() {
             {/* Languages */}
             <Reveal delay={0.4}>
               <div className="flex items-center gap-4 pt-2">
-                <span className="text-xs text-[#475569] font-mono uppercase tracking-wider">Languages:</span>
+                <span className="text-xs text-[#666B60] font-mono uppercase tracking-wider">Languages:</span>
                 <div className="flex flex-wrap items-center">
                   {personalInfo.languages.map((lang, idx) => (
-                    <span key={lang.name} className="text-sm text-[#94A3B8] flex items-center">
+                    <span key={lang.name} className="text-sm text-[#B7B9AD] flex items-center">
                       <span>{lang.name}</span>
                       {idx < personalInfo.languages.length - 1 && <span className="text-white/20 mx-2">·</span>}
                     </span>
@@ -156,7 +156,7 @@ export default function About() {
                     <Icon size={18} style={{ color: h.color }} />
                   </div>
                   <div className="font-semibold text-white text-sm mb-1">{h.label}</div>
-                  <div className="text-xs text-[#64748B]">{h.sub}</div>
+                  <div className="text-xs text-[#8E9285]">{h.sub}</div>
                 </div>
               </Reveal>
             );

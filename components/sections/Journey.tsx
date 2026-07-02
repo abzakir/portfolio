@@ -77,7 +77,7 @@ function TimelineNode({ item, index, isLast }: { item: typeof timeline[0]; index
           <h3 className="font-display font-semibold text-lg text-white mb-2 group-hover:text-white/90">
             {item.title}
           </h3>
-          <p className="text-[#64748B] text-sm leading-relaxed">{item.description}</p>
+          <p className="text-[#8E9285] text-sm leading-relaxed">{item.description}</p>
         </motion.div>
       </div>
     </motion.div>
@@ -86,16 +86,16 @@ function TimelineNode({ item, index, isLast }: { item: typeof timeline[0]; index
 
 export default function Journey() {
   return (
-    <div className="section-padding bg-[#050508] relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-[#8B5CF6]/4 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
+    <div className="section-padding bg-[#0B0C09] relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-[#66734F]/4 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <Reveal>
           <div className="flex items-center gap-3 mb-16">
-            <span className="font-mono text-sm text-[#8B5CF6]">03.</span>
-            <span className="font-mono text-sm text-[#475569]">my_journey</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#8B5CF6]/20 to-transparent" />
+            <span className="font-mono text-sm text-[#66734F]">03.</span>
+            <span className="font-mono text-sm text-[#666B60]">my_journey</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-[#66734F]/20 to-transparent" />
           </div>
         </Reveal>
 
@@ -107,9 +107,9 @@ export default function Journey() {
                 From curious{" "}
                 <span className="gradient-text">kid</span>
                 {" "}to serious{" "}
-                <span style={{ color: "#8B5CF6" }}>builder.</span>
+                <span style={{ color: "#66734F" }}>builder.</span>
               </h2>
-              <p className="text-[#64748B] text-lg leading-relaxed">
+              <p className="text-[#8E9285] text-lg leading-relaxed">
                 Every project, competition, and leadership role is a chapter in this story. 
                 Here's the journey so far — and it's just getting started.
               </p>
@@ -117,11 +117,11 @@ export default function Journey() {
 
             {/* Education cards */}
             <Reveal delay={0.3} className="mt-10 space-y-4">
-              <p className="text-xs font-mono text-[#475569] uppercase tracking-widest mb-4">Education</p>
+              <p className="text-xs font-mono text-[#666B60] uppercase tracking-widest mb-4">Education</p>
               {[
-                { school: "FAST NUCES", degree: "BS Computer Science", grade: "2025–2029", color: "#6C63FF" },
-                { school: "Aga Khan HSS Hyderabad", degree: "Intermediate", grade: "91.6%", color: "#06B6D4" },
-                { school: "Public School Hyderabad", degree: "Matriculation", grade: "84.5%", color: "#8B5CF6" },
+                { school: "FAST NUCES", degree: "BS Computer Science", grade: "2025–2029", color: "#8A9A5B" },
+                { school: "Aga Khan HSS Hyderabad", degree: "Intermediate", grade: "91.6%", color: "#B6BE9C" },
+                { school: "Public School Hyderabad", degree: "Matriculation", grade: "84.5%", color: "#66734F" },
               ].map((edu, i) => (
                 <motion.div
                   key={edu.school}
@@ -137,7 +137,7 @@ export default function Journey() {
                   />
                   <div className="flex-1">
                     <div className="font-semibold text-white text-sm">{edu.school}</div>
-                    <div className="text-xs text-[#64748B]">{edu.degree}</div>
+                    <div className="text-xs text-[#8E9285]">{edu.degree}</div>
                   </div>
                   <div
                     className="text-sm font-mono font-medium px-3 py-1 rounded-lg"

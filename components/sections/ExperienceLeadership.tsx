@@ -8,25 +8,25 @@ import { experience, leadership } from "@/lib/data";
 
 export default function ExperienceLeadership() {
   return (
-    <div className="section-padding bg-[#050508] relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#F43F5E]/4 rounded-full blur-[120px] pointer-events-none" />
+    <div className="section-padding bg-[#0B0C09] relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#A56F5A]/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <Reveal>
           <div className="flex items-center gap-3 mb-16">
-            <span className="font-mono text-sm text-[#F43F5E]">05.</span>
-            <span className="font-mono text-sm text-[#475569]">experience_&_leadership</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#F43F5E]/20 to-transparent" />
+            <span className="font-mono text-sm text-[#A56F5A]">05.</span>
+            <span className="font-mono text-sm text-[#666B60]">experience_&_leadership</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-[#A56F5A]/20 to-transparent" />
           </div>
         </Reveal>
 
         <Reveal>
           <h2 className="font-display font-bold text-4xl lg:text-5xl text-white leading-tight mb-4">
             Beyond{" "}
-            <span style={{ color: "#F43F5E" }}>the code.</span>
+            <span style={{ color: "#A56F5A" }}>the code.</span>
           </h2>
-          <p className="text-[#64748B] text-lg max-w-2xl leading-relaxed mb-16">
+          <p className="text-[#8E9285] text-lg max-w-2xl leading-relaxed mb-16">
             Technical skills are table stakes. Real impact comes from leading, communicating, 
             and taking ownership. Here's where I've done exactly that.
           </p>
@@ -34,7 +34,7 @@ export default function ExperienceLeadership() {
 
         {/* Professional Experience */}
         <Reveal delay={0.1}>
-          <h3 className="font-mono text-xs text-[#475569] uppercase tracking-widest mb-6">
+          <h3 className="font-mono text-xs text-[#666B60] uppercase tracking-widest mb-6">
             Professional Experience
           </h3>
         </Reveal>
@@ -57,7 +57,7 @@ export default function ExperienceLeadership() {
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                     <div>
                       <h3 className="font-display font-bold text-xl text-white">{exp.title}</h3>
-                      <p className="text-[#94A3B8] text-sm">{exp.company}</p>
+                      <p className="text-[#B7B9AD] text-sm">{exp.company}</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <span
@@ -69,13 +69,13 @@ export default function ExperienceLeadership() {
                     </div>
                   </div>
 
-                  <p className="text-[#64748B] text-sm leading-relaxed mb-4">{exp.description}</p>
+                  <p className="text-[#8E9285] text-sm leading-relaxed mb-4">{exp.description}</p>
 
                   <div className="flex flex-wrap gap-2">
                     {exp.highlights.map((h) => (
                       <span
                         key={h}
-                        className="px-3 py-1 rounded-full text-xs glass border border-white/8 text-[#64748B]"
+                        className="px-3 py-1 rounded-full text-xs glass border border-white/8 text-[#8E9285]"
                       >
                         {h}
                       </span>
@@ -89,7 +89,7 @@ export default function ExperienceLeadership() {
 
         {/* Leadership */}
         <Reveal delay={0.2} className="mt-12">
-          <h3 className="font-mono text-xs text-[#475569] uppercase tracking-widest mb-6">
+          <h3 className="font-mono text-xs text-[#666B60] uppercase tracking-widest mb-6">
             Leadership & Entrepreneurship
           </h3>
         </Reveal>
@@ -110,11 +110,11 @@ export default function ExperienceLeadership() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-white mb-0.5">{role.title}</h3>
-                    <p className="text-xs text-[#64748B]">{role.organization}</p>
+                    <p className="text-xs text-[#8E9285]">{role.organization}</p>
                   </div>
                 </div>
 
-                <p className="text-[#64748B] text-sm leading-relaxed mb-4">{role.description}</p>
+                <p className="text-[#8E9285] text-sm leading-relaxed mb-4">{role.description}</p>
 
                 <div
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium"

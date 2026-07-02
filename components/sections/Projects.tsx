@@ -12,16 +12,16 @@ export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="section-padding bg-[#090912] relative overflow-hidden">
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#F59E0B]/4 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
+    <div className="section-padding bg-[#12140F] relative overflow-hidden">
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#C2A878]/4 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <Reveal>
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-mono text-sm text-[#F59E0B]">04.</span>
-            <span className="font-mono text-sm text-[#475569]">projects</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#F59E0B]/20 to-transparent" />
+            <span className="font-mono text-sm text-[#C2A878]">04.</span>
+            <span className="font-mono text-sm text-[#666B60]">projects</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-[#C2A878]/20 to-transparent" />
           </div>
         </Reveal>
 
@@ -31,7 +31,7 @@ export default function Projects() {
               What I{" "}
               <span className="gradient-text-warm">build.</span>
             </h2>
-            <p className="text-[#64748B] mt-4 text-lg max-w-lg leading-relaxed">
+            <p className="text-[#8E9285] mt-4 text-lg max-w-lg leading-relaxed">
               Real projects. Shipped code. Not tutorials — actual systems built from scratch 
               with thought, iteration, and a lot of debugging.
             </p>
@@ -42,7 +42,7 @@ export default function Projects() {
               href="https://github.com/abzakir"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-[#64748B] hover:text-white transition-colors group"
+              className="inline-flex items-center gap-2 text-sm text-[#8E9285] hover:text-white transition-colors group"
             >
               <Github size={16} />
               View all on GitHub
@@ -95,11 +95,11 @@ export default function Projects() {
                     <h3 className="font-display font-bold text-xl text-white mb-1.5 group-hover:text-white/90">
                       {project.title}
                     </h3>
-                    <p className="text-xs font-mono text-[#475569]">{project.tagline}</p>
+                    <p className="text-xs font-mono text-[#666B60]">{project.tagline}</p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[#64748B] text-sm leading-relaxed mb-5 flex-1">
+                  <p className="text-[#8E9285] text-sm leading-relaxed mb-5 flex-1">
                     {project.description}
                   </p>
 
@@ -107,7 +107,7 @@ export default function Projects() {
                   <div className="mb-5">
                     <div className="space-y-1.5">
                       {project.features.slice(0, 3).map((f) => (
-                        <div key={f} className="flex items-center gap-2 text-xs text-[#64748B]">
+                        <div key={f} className="flex items-center gap-2 text-xs text-[#8E9285]">
                           <div
                             className="w-1 h-1 rounded-full flex-shrink-0"
                             style={{ background: project.color }}
@@ -123,7 +123,7 @@ export default function Projects() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-lg text-xs glass border border-white/8 text-[#64748B] font-mono"
+                        className="px-2.5 py-1 rounded-lg text-xs glass border border-white/8 text-[#8E9285] font-mono"
                       >
                         {tech}
                       </span>
@@ -136,7 +136,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-[#64748B] hover:text-white transition-colors group/link"
+                      className="flex items-center gap-1.5 text-xs text-[#8E9285] hover:text-white transition-colors group/link"
                     >
                       <Github size={14} />
                       <span>Source Code</span>
@@ -147,8 +147,8 @@ export default function Projects() {
                       <span
                         className="text-xs px-2 py-0.5 rounded-full font-mono"
                         style={{
-                          background: project.status === "Shipped" ? "#10B98115" : "#F59E0B15",
-                          color: project.status === "Shipped" ? "#10B981" : "#F59E0B",
+                          background: project.status === "Shipped" ? "#93A66D15" : "#C2A87815",
+                          color: project.status === "Shipped" ? "#93A66D" : "#C2A878",
                         }}
                       >
                         {project.status}

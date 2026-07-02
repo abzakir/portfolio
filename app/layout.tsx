@@ -47,15 +47,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#050508] text-white antialiased">
+      <body className="bg-[#0B0C09] text-white antialiased">
         {children}
         <Toaster
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#0d0d1a",
-              border: "1px solid rgba(108,99,255,0.3)",
-              color: "#F8FAFC",
+              background: "#1A1D15",
+              border: "1px solid rgba(138,154,91,0.3)",
+              color: "#F2F0E8",
             },
           }}
         />

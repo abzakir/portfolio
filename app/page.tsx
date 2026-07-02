@@ -16,7 +16,7 @@ import { CustomCursor } from "@/components/ui/CustomCursor";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#050508]">
+    <main className="relative min-h-screen bg-[#0B0C09]">
       <CustomCursor />
       <ScrollProgress />
       <Navigation />

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { personalInfo } from "@/lib/data";
@@ -8,10 +7,20 @@ import MagneticButton from "@/components/ui/MagneticButton";
 import { Github, Linkedin, Mail, ChevronDown, Download, ExternalLink } from "lucide-react";
 
 // Floating particle component
-function Particle({ delay, x, size }: { delay: number; x: number; size: number }) {
+function Particle({
+  delay,
+  x,
+  size,
+  duration,
+}: {
+  delay: number;
+  x: number;
+  size: number;
+  duration: number;
+}) {
   return (
     <motion.div
-      className="absolute bottom-0 rounded-full bg-gradient-to-t from-[#6C63FF]/40 to-transparent pointer-events-none"
+      className="absolute bottom-0 rounded-full bg-gradient-to-t from-[#8A9A5B]/40 to-transparent pointer-events-none"
       style={{ left: `${x}%`, width: size, height: size }}
       initial={{ y: "0%", opacity: 0 }}
       animate={{
@@ -20,7 +29,7 @@ function Particle({ delay, x, size }: { delay: number; x: number; size: number }
         scale: [0.5, 1, 0.5],
       }}
       transition={{
-        duration: 8 + Math.random() * 4,
+        duration,
         delay,
         repeat: Infinity,
         ease: "easeOut",
@@ -30,14 +39,16 @@ function Particle({ delay, x, size }: { delay: number; x: number; size: number }
 }
 
 export default function Hero() {
-  const [particles] = useState(() =>
-    Array.from({ length: 20 }, (_, i) => ({
+  const particles = Array.from({ length: 20 }, (_, i) => {
+    const seed = (i * 37 + 17) % 100;
+    return {
       id: i,
-      delay: Math.random() * 8,
-      x: Math.random() * 100,
-      size: 2 + Math.random() * 4,
-    }))
-  );
+      delay: (seed % 80) / 10,
+      x: (seed * 53) % 100,
+      size: 2 + ((seed * 29) % 40) / 10,
+      duration: 8 + ((seed * 11) % 40) / 10,
+    };
+  });
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -47,19 +58,25 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050508]">
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0B0C09]">
       {/* Grid pattern */}
       <div className="absolute inset-0 hero-grid opacity-60" />
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#6C63FF]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#06B6D4]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#8B5CF6]/5 blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#8A9A5B]/8 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#B6BE9C]/8 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#66734F]/5 blur-[150px] pointer-events-none" />
 
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map((p) => (
-          <Particle key={p.id} delay={p.delay} x={p.x} size={p.size} />
+          <Particle
+            key={p.id}
+            delay={p.delay}
+            x={p.x}
+            size={p.size}
+            duration={p.duration}
+          />
         ))}
       </div>
 
@@ -70,9 +87,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#6C63FF]/30 text-sm text-[#94A3B8] mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#8A9A5B]/30 text-sm text-[#B7B9AD] mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-[#06B6D4] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#B6BE9C] animate-pulse" />
           Available for Internships & Collaborations · Islamabad, Pakistan
         </motion.div>
 
@@ -87,7 +104,7 @@ export default function Hero() {
             <span className="relative inline-block">
               <span className="gradient-text">Zakir</span>
               <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-[#6C63FF] to-[#06B6D4] rounded-full"
+                className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-[#8A9A5B] to-[#B6BE9C] rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -102,9 +119,9 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-xl sm:text-2xl text-[#94A3B8] mb-6 h-8 flex items-center justify-center"
+          className="text-xl sm:text-2xl text-[#B7B9AD] mb-6 h-8 flex items-center justify-center"
         >
-          <span className="font-mono text-[#6C63FF] mr-2">→</span>
+          <span className="font-mono text-[#8A9A5B] mr-2">→</span>
           <TypeAnimation
             sequence={[
               "Software Developer", 2000,
@@ -126,7 +143,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="text-[#64748B] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-[#8E9285] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Second-year CS student at FAST NUCES who builds real things — from AI-powered 
           computer vision systems to game engines in C++. I lead, I ship, I learn fast.
@@ -173,7 +190,7 @@ export default function Hero() {
               className="text-center"
             >
               <div className="text-2xl font-display font-bold gradient-text">{stat.value}</div>
-              <div className="text-xs text-[#64748B] mt-1">{stat.label}</div>
+              <div className="text-xs text-[#8E9285] mt-1">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -185,7 +202,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
         onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#475569] hover:text-white transition-colors cursor-pointer"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#666B60] hover:text-white transition-colors cursor-pointer"
       >
         <span className="text-xs tracking-widest uppercase font-mono">Scroll</span>
         <motion.div

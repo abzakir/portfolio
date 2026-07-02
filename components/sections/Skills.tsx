@@ -10,9 +10,9 @@ import { skills } from "@/lib/data";
 type SkillCategory = "languages" | "tools" | "libraries";
 
 const categories: { key: SkillCategory; label: string; color: string }[] = [
-  { key: "languages", label: "Languages", color: "#6C63FF" },
-  { key: "tools", label: "Tools", color: "#06B6D4" },
-  { key: "libraries", label: "Libraries", color: "#8B5CF6" },
+  { key: "languages", label: "Languages", color: "#8A9A5B" },
+  { key: "tools", label: "Tools", color: "#B6BE9C" },
+  { key: "libraries", label: "Libraries", color: "#66734F" },
 ];
 
 export default function Skills() {
@@ -20,19 +20,19 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   const currentSkills = skills[activeCategory];
-  const activeColor = categories.find((c) => c.key === activeCategory)?.color || "#6C63FF";
+  const activeColor = categories.find((c) => c.key === activeCategory)?.color || "#8A9A5B";
 
   return (
-    <div className="section-padding bg-[#090912] relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#06B6D4]/4 rounded-full blur-[120px] pointer-events-none" />
+    <div className="section-padding bg-[#12140F] relative overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#B6BE9C]/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <Reveal>
           <div className="flex items-center gap-3 mb-16">
-            <span className="font-mono text-sm text-[#06B6D4]">02.</span>
-            <span className="font-mono text-sm text-[#475569]">tech_stack</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#06B6D4]/20 to-transparent" />
+            <span className="font-mono text-sm text-[#B6BE9C]">02.</span>
+            <span className="font-mono text-sm text-[#666B60]">tech_stack</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-[#B6BE9C]/20 to-transparent" />
           </div>
         </Reveal>
 
@@ -47,7 +47,7 @@ export default function Skills() {
                 </span>{" "}
                 I think in.
               </h2>
-              <p className="text-[#64748B] mt-4 text-lg leading-relaxed">
+              <p className="text-[#8E9285] mt-4 text-lg leading-relaxed">
                 Not just technologies I've heard of — tools I've actually built with, 
                 debugged at 2am, and shipped production code in.
               </p>
@@ -63,7 +63,7 @@ export default function Skills() {
                     className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                       activeCategory === cat.key
                         ? "text-white"
-                        : "text-[#64748B] hover:text-white glass border border-white/8"
+                        : "text-[#8E9285] hover:text-white glass border border-white/8"
                     }`}
                   >
                     {activeCategory === cat.key && (
@@ -83,12 +83,12 @@ export default function Skills() {
             {/* All skills pill cloud */}
             <Reveal delay={0.3}>
               <div className="space-y-3">
-                <p className="text-xs font-mono text-[#475569] uppercase tracking-widest">All technologies</p>
+                <p className="text-xs font-mono text-[#666B60] uppercase tracking-widest">All technologies</p>
                 <div className="flex flex-wrap gap-2">
                   {[...skills.languages, ...skills.tools, ...skills.libraries].map((skill) => (
                     <span
                       key={skill.name}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs glass border border-white/8 text-[#64748B] hover:text-white hover:border-[#6C63FF]/30 transition-all duration-200 cursor-default"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs glass border border-white/8 text-[#8E9285] hover:text-white hover:border-[#8A9A5B]/30 transition-all duration-200 cursor-default"
                     >
                       {"image" in skill && skill.image ? (
                         <div className="relative w-3.5 h-3.5 flex items-center justify-center">
@@ -160,12 +160,12 @@ export default function Skills() {
                             style={{ background: skill.color }}
                           />
                         </div>
-                        <p className="text-sm text-[#64748B]">{skill.desc}</p>
+                        <p className="text-sm text-[#8E9285]">{skill.desc}</p>
                       </div>
 
                       {/* Arrow indicator */}
                       <motion.div
-                        className="opacity-0 group-hover:opacity-100 text-[#475569]"
+                        className="opacity-0 group-hover:opacity-100 text-[#666B60]"
                         animate={{ x: hoveredSkill === skill.name ? 0 : -8 }}
                         transition={{ duration: 0.2 }}
                       >

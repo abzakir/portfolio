@@ -54,7 +54,7 @@ export default function Navigation() {
         transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "py-3 bg-[#050508]/80 backdrop-blur-xl border-b border-white/5"
+            ? "py-3 bg-[#0B0C09]/80 backdrop-blur-xl border-b border-white/5"
             : "py-5 bg-transparent"
         }`}
       >
@@ -66,7 +66,7 @@ export default function Navigation() {
             className="relative group cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6C63FF] to-[#8B5CF6] flex items-center justify-center font-display font-bold text-sm text-white shadow-lg shadow-[#6C63FF]/30">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8A9A5B] to-[#66734F] flex items-center justify-center font-display font-bold text-sm text-[#0B0C09] shadow-lg shadow-[#8A9A5B]/20">
               AZ
             </div>
           </motion.a>
@@ -80,7 +80,7 @@ export default function Navigation() {
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 cursor-pointer ${
-                    isActive ? "text-white" : "text-[#94A3B8] hover:text-white"
+                    isActive ? "text-white" : "text-[#B7B9AD] hover:text-white"
                   }`}
                 >
                   {isActive && (
@@ -125,7 +125,7 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed inset-0 z-40 bg-[#050508]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 md:hidden"
+            className="fixed inset-0 z-40 bg-[#0B0C09]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 md:hidden"
           >
             {navLinks.map((link, i) => (
               <motion.button

@@ -9,25 +9,25 @@ import { achievements } from "@/lib/data";
 import { X } from "lucide-react";
 
 const typeColors: Record<string, string> = {
-  Competition: "#6C63FF",
-  Award: "#F59E0B",
-  Exhibition: "#06B6D4",
+  Competition: "#8A9A5B",
+  Award: "#C2A878",
+  Exhibition: "#B6BE9C",
 };
 
 export default function Achievements() {
   const [selected, setSelected] = useState<typeof achievements[0] | null>(null);
 
   return (
-    <div className="section-padding bg-[#090912] relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#F59E0B]/4 rounded-full blur-[120px] pointer-events-none" />
+    <div className="section-padding bg-[#12140F] relative overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#C2A878]/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <Reveal>
           <div className="flex items-center gap-3 mb-16">
-            <span className="font-mono text-sm text-[#F59E0B]">06.</span>
-            <span className="font-mono text-sm text-[#475569]">achievements</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#F59E0B]/20 to-transparent" />
+            <span className="font-mono text-sm text-[#C2A878]">06.</span>
+            <span className="font-mono text-sm text-[#666B60]">achievements</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-[#C2A878]/20 to-transparent" />
           </div>
         </Reveal>
 
@@ -36,7 +36,7 @@ export default function Achievements() {
             Milestones &{" "}
             <span className="gradient-text-warm">Recognition.</span>
           </h2>
-          <p className="text-[#64748B] text-lg max-w-2xl leading-relaxed mb-16">
+          <p className="text-[#8E9285] text-lg max-w-2xl leading-relaxed mb-16">
             Every certificate is a chapter. Every competition is a test. 
             Here's what I've earned on the way.
           </p>
@@ -81,7 +81,7 @@ export default function Achievements() {
                     >
                       {achievement.type}
                     </span>
-                    <span className="text-xs font-mono text-[#475569]">{achievement.year}</span>
+                    <span className="text-xs font-mono text-[#666B60]">{achievement.year}</span>
                   </div>
                 </div>
 
@@ -94,7 +94,7 @@ export default function Achievements() {
                 >
                   {achievement.subtitle}
                 </p>
-                <p className="text-[#64748B] text-xs leading-relaxed line-clamp-2">
+                <p className="text-[#8E9285] text-xs leading-relaxed line-clamp-2">
                   {achievement.description}
                 </p>
 
@@ -108,7 +108,7 @@ export default function Achievements() {
                   >
                     {achievement.category}
                   </span>
-                  <span className="text-xs text-[#475569] group-hover:text-[#94A3B8] transition-colors">
+                  <span className="text-xs text-[#666B60] group-hover:text-[#B7B9AD] transition-colors">
                     Click to expand →
                   </span>
                 </div>
@@ -157,7 +157,7 @@ export default function Achievements() {
                   </div>
                   <button
                     onClick={() => setSelected(null)}
-                    className="w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-[#64748B] hover:text-white transition-colors cursor-pointer"
+                    className="w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-[#8E9285] hover:text-white transition-colors cursor-pointer"
                   >
                     <X size={14} />
                   </button>
@@ -174,7 +174,7 @@ export default function Achievements() {
                   >
                     {selected.type}
                   </span>
-                  <span className="text-xs text-[#475569] font-mono">{selected.year}</span>
+                  <span className="text-xs text-[#666B60] font-mono">{selected.year}</span>
                 </div>
 
                 <h3 className="font-display font-bold text-2xl text-white mb-2">
@@ -183,7 +183,7 @@ export default function Achievements() {
                 <p className="text-sm font-medium mb-4" style={{ color: selected.color }}>
                   {selected.subtitle}
                 </p>
-                <p className="text-[#94A3B8] text-sm leading-relaxed">{selected.description}</p>
+                <p className="text-[#B7B9AD] text-sm leading-relaxed">{selected.description}</p>
               </motion.div>
             </motion.div>
           </>

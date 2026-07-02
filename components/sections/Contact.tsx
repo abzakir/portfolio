@@ -24,7 +24,7 @@ const contactItems = [
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
     copyable: true,
-    color: "#6C63FF",
+    color: "#8A9A5B",
   },
   {
     icon: Phone,
@@ -32,7 +32,7 @@ const contactItems = [
     value: personalInfo.phone,
     href: `tel:${personalInfo.phone}`,
     copyable: true,
-    color: "#06B6D4",
+    color: "#B6BE9C",
   },
   {
     icon: Github,
@@ -40,7 +40,7 @@ const contactItems = [
     value: "abzakir",
     href: personalInfo.github,
     copyable: false,
-    color: "#8B5CF6",
+    color: "#66734F",
   },
   {
     icon: Linkedin,
@@ -48,7 +48,7 @@ const contactItems = [
     value: "abdul-zakir",
     href: personalInfo.linkedin,
     copyable: false,
-    color: "#F59E0B",
+    color: "#C2A878",
   },
 ];
 
@@ -76,7 +76,7 @@ function ContactItem({ item }: { item: typeof contactItems[0] }) {
       </div>
 
       <div className="flex-1 min-w-0">
-        <div className="text-xs text-[#475569] font-mono mb-1">{item.label}</div>
+        <div className="text-xs text-[#666B60] font-mono mb-1">{item.label}</div>
         <a
           href={item.href}
           target={item.href.startsWith("http") ? "_blank" : undefined}
@@ -90,7 +90,7 @@ function ContactItem({ item }: { item: typeof contactItems[0] }) {
       {item.copyable && (
         <button
           onClick={handleCopy}
-          className="opacity-0 group-hover:opacity-100 transition-all duration-200 w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-[#64748B] hover:text-white cursor-pointer"
+          className="opacity-0 group-hover:opacity-100 transition-all duration-200 w-8 h-8 rounded-lg glass border border-white/10 flex items-center justify-center text-[#8E9285] hover:text-white cursor-pointer"
         >
           {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} />}
         </button>
@@ -123,16 +123,16 @@ export default function Contact() {
   };
 
   return (
-    <div className="section-padding bg-[#050508] relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#6C63FF]/5 rounded-full blur-[150px] pointer-events-none" />
+    <div className="section-padding bg-[#0B0C09] relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#8A9A5B]/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <Reveal>
           <div className="flex items-center gap-3 mb-16">
-            <span className="font-mono text-sm text-[#6C63FF]">07.</span>
-            <span className="font-mono text-sm text-[#475569]">contact</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#6C63FF]/20 to-transparent" />
+            <span className="font-mono text-sm text-[#8A9A5B]">07.</span>
+            <span className="font-mono text-sm text-[#666B60]">contact</span>
+            <div className="flex-1 h-px bg-gradient-to-r from-[#8A9A5B]/20 to-transparent" />
           </div>
         </Reveal>
 
@@ -144,7 +144,7 @@ export default function Contact() {
                 Let's{" "}
                 <span className="gradient-text">connect.</span>
               </h2>
-              <p className="text-[#64748B] text-lg leading-relaxed mb-10">
+              <p className="text-[#8E9285] text-lg leading-relaxed mb-10">
                 Whether you're a recruiter, a fellow builder, or someone with an interesting problem — 
                 I'm always open to a good conversation. Reach out.
               </p>
@@ -176,7 +176,7 @@ export default function Contact() {
           <Reveal direction="left" delay={0.2}>
             <div className="glass border border-white/8 rounded-3xl p-8">
               <h3 className="font-display font-bold text-2xl text-white mb-2">Send a message</h3>
-              <p className="text-[#64748B] text-sm mb-8">I typically reply within 24 hours.</p>
+              <p className="text-[#8E9285] text-sm mb-8">I typically reply within 24 hours.</p>
 
               {submitted ? (
                 <motion.div
@@ -184,14 +184,14 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12 flex flex-col items-center justify-center"
                 >
-                  <div className="w-16 h-16 bg-[#10B981]/10 border border-[#10B981]/30 rounded-full flex items-center justify-center text-[#10B981] mb-4">
+                  <div className="w-16 h-16 bg-[#93A66D]/10 border border-[#93A66D]/30 rounded-full flex items-center justify-center text-[#93A66D] mb-4">
                     <Check size={28} />
                   </div>
                   <h4 className="font-display font-bold text-xl text-white mb-2">Message sent!</h4>
-                  <p className="text-[#64748B] text-sm">Thanks for reaching out. I'll get back to you soon.</p>
+                  <p className="text-[#8E9285] text-sm">Thanks for reaching out. I'll get back to you soon.</p>
                   <button
                     onClick={() => { setSubmitted(false); setFormState({ name: "", email: "", message: "" }); }}
-                    className="mt-6 text-sm text-[#6C63FF] hover:text-[#8B5CF6] transition-colors cursor-pointer"
+                    className="mt-6 text-sm text-[#8A9A5B] hover:text-[#66734F] transition-colors cursor-pointer"
                   >
                     Send another message
                   </button>
@@ -203,7 +203,7 @@ export default function Contact() {
                     { name: "email", label: "Your Email", type: "email", placeholder: "john@example.com" },
                   ].map((field) => (
                     <div key={field.name}>
-                      <label className="block text-xs font-mono text-[#475569] uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-mono text-[#666B60] uppercase tracking-wider mb-2">
                         {field.label}
                       </label>
                       <input
@@ -213,13 +213,13 @@ export default function Contact() {
                         onChange={(e) =>
                           setFormState((s) => ({ ...s, [field.name]: e.target.value }))
                         }
-                        className="w-full bg-white/4 border border-white/8 rounded-xl px-4 py-3 text-white placeholder-[#475569] text-sm focus:outline-none focus:border-[#6C63FF]/50 focus:bg-white/6 transition-all duration-200"
+                        className="w-full bg-white/4 border border-white/8 rounded-xl px-4 py-3 text-white placeholder-[#666B60] text-sm focus:outline-none focus:border-[#8A9A5B]/50 focus:bg-white/6 transition-all duration-200"
                       />
                     </div>
                   ))}
 
                   <div>
-                    <label className="block text-xs font-mono text-[#475569] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-mono text-[#666B60] uppercase tracking-wider mb-2">
                       Message
                     </label>
                     <textarea
@@ -227,7 +227,7 @@ export default function Contact() {
                       placeholder="Tell me about your project, opportunity, or just say hi..."
                       value={formState.message}
                       onChange={(e) => setFormState((s) => ({ ...s, message: e.target.value }))}
-                      className="w-full bg-white/4 border border-white/8 rounded-xl px-4 py-3 text-white placeholder-[#475569] text-sm focus:outline-none focus:border-[#6C63FF]/50 focus:bg-white/6 transition-all duration-200 resize-none"
+                      className="w-full bg-white/4 border border-white/8 rounded-xl px-4 py-3 text-white placeholder-[#666B60] text-sm focus:outline-none focus:border-[#8A9A5B]/50 focus:bg-white/6 transition-all duration-200 resize-none"
                     />
                   </div>
 
