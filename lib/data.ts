@@ -69,7 +69,7 @@ export const education = [
   {
     institution: "FAST National University",
     degree: "BS Computer Science",
-    period: "2024 – 2029",
+    period: "2025 – 2029",
     location: "Islamabad, Pakistan",
     details: "Second-year student. Coursework in DSA, OOP, systems programming, and software engineering.",
     type: "university",
@@ -305,7 +305,7 @@ export const timeline = [
     color: "#66734F",
   },
   {
-    year: "2024",
+    year: "2025",
     title: "FAST NUCES — Chapter Begins",
     description: "Enrolled in BS Computer Science at FAST National University, Islamabad. Started building real software: games in C++, computer vision in Python.",
     icon: "graduation",
