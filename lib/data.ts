@@ -97,6 +97,21 @@ export const education = [
 
 export const experience = [
   {
+    title: "Co-Founder & Technical Lead",
+    company: "Nuqta (joinnuqta.org)",
+    period: "2025 – Present",
+    type: "startup",
+    icon: "sparkles",
+    color: "#8A9A5B",
+    description: "Co-founded Pakistan's largest student mentorship platform with Zayam. Together, engineered the full-stack web application, recruited and vetted high-achieving mentors, and led community growth.",
+    highlights: [
+      "Co-founded Nuqta with Zayam & collaboratively built full-stack platform",
+      "Recruited, interviewed & onboarded verified student mentors",
+      "Built Student, Mentor, and Admin real-time management dashboards",
+      "Fostered a thriving mentorship community for aspiring learners across Pakistan",
+    ],
+  },
+  {
     title: "Contract Sales Representative",
     company: "State Life Insurance Corporation of Pakistan",
     period: "2026",
@@ -339,9 +354,9 @@ export const nuqtaData = {
   logo: "/icon.png",
   website: "https://www.joinnuqta.org",
   tagline: "Building the Future of Student Mentorship in Pakistan",
-  shortDesc: "Nuqta is an EdTech startup I co-founded with fellow Computer Science students from FAST NUCES Islamabad. Our mission is to bridge the gap between high-achieving students and those seeking guidance by creating Pakistan's largest student mentorship platform.",
+  shortDesc: "Nuqta is an EdTech startup I co-founded with Zayam and fellow Computer Science students from FAST NUCES Islamabad. Together, we built Pakistan's largest student mentorship platform to bridge the gap between high-achieving students and those seeking guidance.",
   fullDesc: [
-    "Nuqta is an EdTech startup I co-founded with fellow Computer Science students from FAST NUCES Islamabad. Our mission is to bridge the gap between high-achieving students and those seeking guidance by creating Pakistan's largest student mentorship platform.",
+    "Nuqta is an EdTech startup I co-founded with Zayam and fellow Computer Science students from FAST NUCES Islamabad. Together, we designed and built the entire platform to bridge the gap between high-achieving students and those seeking guidance by creating Pakistan's largest student mentorship platform.",
     "The platform connects students with verified mentors who have excelled in board examinations, university admissions, scholarships, internships, competitive programming, freelancing, entrepreneurship, and career development.",
     "Students receive personalized mentorship, academic guidance, career advice, and access to a growing community of ambitious learners committed to achieving their goals."
   ],
@@ -382,10 +397,10 @@ export const nuqtaData = {
   ],
   timeline: [
     { milestone: "Idea Validated", done: true, desc: "Market research & student demand assessment" },
-    { milestone: "Core Team Formed", done: true, desc: "CS students from FAST NUCES Islamabad" },
+    { milestone: "Core Team Formed", done: true, desc: "Co-founded by Zayam & Zakir with CS students from FAST NUCES" },
     { milestone: "Mentor Recruitment", done: true, desc: "Onboarding top academic & technical talent" },
     { milestone: "Community Established", done: true, desc: "Initial cohort of ambitious learners" },
-    { milestone: "Full-Stack Platform Developed", done: true, desc: "Production-grade web architecture" },
+    { milestone: "Full-Stack Platform Developed", done: true, desc: "Built collaboratively by Zayam & Zakir" },
     { milestone: "Student Dashboard", done: true, desc: "Interactive student portal shipped" },
     { milestone: "Mentor Dashboard", done: true, desc: "Mentor availability & session control" },
     { milestone: "Admin Dashboard", done: true, desc: "Verification and ecosystem management" },
