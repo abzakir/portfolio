@@ -10,6 +10,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Journey", href: "#journey" },
+  { label: "Startup", href: "#startup", highlight: true },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Achievements", href: "#achievements" },
@@ -26,7 +27,7 @@ export default function Navigation() {
       setScrolled(window.scrollY > 50);
 
       // Update active section
-      const sections = ["home", "about", "skills", "journey", "projects", "experience", "achievements", "contact"];
+      const sections = ["home", "about", "skills", "journey", "startup", "projects", "experience", "achievements", "contact"];
       for (const section of sections.reverse()) {
         const el = document.getElementById(section);
         if (el && window.scrollY >= el.offsetTop - 200) {
@@ -90,7 +91,12 @@ export default function Navigation() {
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
-                  <span className="relative z-10">{link.label}</span>
+                  <span className="relative z-10 flex items-center gap-1.5">
+                    {link.label}
+                    {link.highlight && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#8A9A5B] animate-pulse" />
+                    )}
+                  </span>
                 </button>
               );
             })}

@@ -6,6 +6,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Journey from "@/components/sections/Journey";
+import Startup from "@/components/sections/Startup";
 import Projects from "@/components/sections/Projects";
 import ExperienceLeadership from "@/components/sections/ExperienceLeadership";
 import Achievements from "@/components/sections/Achievements";
@@ -35,6 +36,10 @@ export default function Home() {
 
       <section id="journey">
         <Journey />
+      </section>
+
+      <section id="startup">
+        <Startup />
       </section>
 
       <section id="projects">

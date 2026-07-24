@@ -155,7 +155,7 @@ export default function Journey() {
             <div className="space-y-0">
               {timeline.map((item, i) => (
                 <TimelineNode
-                  key={item.year}
+                  key={`${item.year}-${item.title}`}
                   item={item}
                   index={i}
                   isLast={i === timeline.length - 1}

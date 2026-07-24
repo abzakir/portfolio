@@ -333,3 +333,85 @@ export const timeline = [
     color: "#8A9A5B",
   },
 ];
+
+export const nuqtaData = {
+  name: "Nuqta",
+  logo: "/icon.png",
+  website: "https://www.joinnuqta.org",
+  tagline: "Building the Future of Student Mentorship in Pakistan",
+  shortDesc: "Nuqta is an EdTech startup I co-founded with fellow Computer Science students from FAST NUCES Islamabad. Our mission is to bridge the gap between high-achieving students and those seeking guidance by creating Pakistan's largest student mentorship platform.",
+  fullDesc: [
+    "Nuqta is an EdTech startup I co-founded with fellow Computer Science students from FAST NUCES Islamabad. Our mission is to bridge the gap between high-achieving students and those seeking guidance by creating Pakistan's largest student mentorship platform.",
+    "The platform connects students with verified mentors who have excelled in board examinations, university admissions, scholarships, internships, competitive programming, freelancing, entrepreneurship, and career development.",
+    "Students receive personalized mentorship, academic guidance, career advice, and access to a growing community of ambitious learners committed to achieving their goals."
+  ],
+  mission: {
+    highlight: "Every student deserves access to the right guidance at the right time.",
+    text: "Nuqta exists to connect ambitious students with mentors who have already walked the path they aspire to follow, making quality mentorship accessible, trustworthy, and impactful for students across Pakistan."
+  },
+  impactStats: [
+    { title: "Students Supported", badge: "Growing", icon: "GraduationCap", color: "#8A9A5B" },
+    { title: "Verified Mentors", badge: "Growing", icon: "UserCheck", color: "#B6BE9C" },
+    { title: "Growing Community", badge: "Expanding", icon: "Globe", color: "#C2A878" },
+    { title: "Live Platform", badge: "Live Now", icon: "Rocket", color: "#93A66D" },
+  ],
+  features: [
+    { name: "Verified Mentors", desc: "Vetted top achievers with proven academic and industry track records", icon: "ShieldCheck" },
+    { name: "Student Dashboard", desc: "Intuitive portal for booking, tracking progress, and accessing resources", icon: "LayoutDashboard" },
+    { name: "Mentor Dashboard", desc: "Streamlined schedule management and session tracking tools", icon: "CalendarCheck" },
+    { name: "Admin Dashboard", desc: "Centralized control panel for system oversight, verification, and analytics", icon: "Sliders" },
+    { name: "Personalized Mentorship", desc: "1-on-1 tailor-made guidance aligned with individual goals", icon: "Sparkles" },
+    { name: "Academic Roadmaps", desc: "Step-by-step guidance for board exams, SATs, ECAT, and university entrance", icon: "Compass" },
+    { name: "Career Guidance", desc: "Insights into freelancing, internships, software engineering, and startups", icon: "Briefcase" },
+    { name: "Community Support", desc: "Peer-to-peer learning network and collaborative student groups", icon: "Users" },
+    { name: "Secure Authentication", desc: "Bank-grade data privacy and secure user authentication", icon: "Lock" },
+    { name: "Real-Time Platform", desc: "Instant notifications, status updates, and interactive sessions", icon: "Zap" },
+    { name: "Mentor Profiles", desc: "Detailed portfolio profiles highlighting expertise and achievements", icon: "User" },
+    { name: "Mentorship Session Booking", desc: "Seamless calendar integration and automated session scheduling", icon: "Clock" },
+  ],
+  techStack: [
+    { name: "React", category: "Frontend", color: "#61DAFB" },
+    { name: "Next.js", category: "Framework", color: "#FFFFFF" },
+    { name: "Node.js", category: "Runtime", color: "#339933" },
+    { name: "Express.js", category: "Backend", color: "#828282" },
+    { name: "MongoDB", category: "Database", color: "#47A248" },
+    { name: "Tailwind CSS", category: "Styling", color: "#06B6D4" },
+    { name: "REST APIs", category: "Architecture", color: "#8A9A5B" },
+    { name: "Git", category: "Version Control", color: "#F05032" },
+    { name: "GitHub", category: "Repository", color: "#A8B9CC" },
+  ],
+  timeline: [
+    { milestone: "Idea Validated", done: true, desc: "Market research & student demand assessment" },
+    { milestone: "Core Team Formed", done: true, desc: "CS students from FAST NUCES Islamabad" },
+    { milestone: "Mentor Recruitment", done: true, desc: "Onboarding top academic & technical talent" },
+    { milestone: "Community Established", done: true, desc: "Initial cohort of ambitious learners" },
+    { milestone: "Full-Stack Platform Developed", done: true, desc: "Production-grade web architecture" },
+    { milestone: "Student Dashboard", done: true, desc: "Interactive student portal shipped" },
+    { milestone: "Mentor Dashboard", done: true, desc: "Mentor availability & session control" },
+    { milestone: "Admin Dashboard", done: true, desc: "Verification and ecosystem management" },
+    { milestone: "Authentication & Database Integration", done: true, desc: "Secure DB schemas and auth flows" },
+    { milestone: "Website Officially Launched", done: true, isHighlight: true, desc: "Live at joinnuqta.org" },
+  ],
+  launchNote: "Nuqta has officially launched and is actively connecting students with experienced mentors across Pakistan. We continue improving the platform by introducing new features, enhancing user experience, and expanding our mentor network to make quality guidance accessible for every student.",
+  currentStatus: {
+    status: "LIVE",
+    phase: "Growth & Feature Development",
+    focus: [
+      "Expanding mentor network",
+      "Improving user experience",
+      "Scaling the student community",
+      "Building advanced mentorship features"
+    ]
+  },
+  vision: {
+    quote: "Every successful student has a story. Nuqta exists to ensure every aspiring student has someone to learn from.",
+    desc: "Our long-term vision is to become Pakistan's largest student mentorship ecosystem, empowering millions of learners to make informed academic and career decisions through trusted guidance, meaningful mentorship, and a thriving community of future leaders."
+  },
+  founderNote: {
+    title: "From the Founder",
+    quote: "I believe talent exists everywhere, but guidance doesn't. Nuqta is my attempt to change that.",
+    author: "Zakir",
+    role: "Co-Founder, Nuqta"
+  }
+};
+
