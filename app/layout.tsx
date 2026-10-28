@@ -26,7 +26,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-abzakir1.vercel.app"),
+  metadataBase: new URL("https://www.abzakir.online"),
   title: "Abdul Zakir",
   description:
     "CS student at FAST NUCES Islamabad. National finalist at the Alibaba Cloud AI Hackathon Pakistan 2026 with MedNuskha. I build AI agents, physics simulations and things people use.",
