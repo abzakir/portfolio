@@ -1,64 +1,23 @@
-"use client";
-
-import dynamic from "next/dynamic";
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/sections/Hero";
+import Nav from "@/components/Nav";
 import About from "@/components/sections/About";
-import Skills from "@/components/sections/Skills";
-import Journey from "@/components/sections/Journey";
-import Startup from "@/components/sections/Startup";
-import Projects from "@/components/sections/Projects";
-import ExperienceLeadership from "@/components/sections/ExperienceLeadership";
-import Achievements from "@/components/sections/Achievements";
 import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
-import ScrollProgress from "@/components/ui/ScrollProgress";
-import { CustomCursor } from "@/components/ui/CustomCursor";
+import Hero from "@/components/sections/Hero";
+import MoreWork from "@/components/sections/MoreWork";
+import Recent from "@/components/sections/Recent";
+import Work from "@/components/sections/Work";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#0B0C09]">
-      <CustomCursor />
-      <ScrollProgress />
-      <Navigation />
-
-      <section id="home">
+    <>
+      <Nav />
+      <main>
         <Hero />
-      </section>
-
-      <section id="about">
+        <Recent />
+        <Work />
+        <MoreWork />
         <About />
-      </section>
-
-      <section id="skills">
-        <Skills />
-      </section>
-
-      <section id="journey">
-        <Journey />
-      </section>
-
-      <section id="startup">
-        <Startup />
-      </section>
-
-      <section id="projects">
-        <Projects />
-      </section>
-
-      <section id="experience">
-        <ExperienceLeadership />
-      </section>
-
-      <section id="achievements">
-        <Achievements />
-      </section>
-
-      <section id="contact">
         <Contact />
-      </section>
-
-      <Footer />
-    </main>
+      </main>
+    </>
   );
 }

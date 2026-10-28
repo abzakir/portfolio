@@ -2,167 +2,149 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Reveal, { Stagger, StaggerItem } from "@/components/ui/Reveal";
-import { personalInfo } from "@/lib/data";
-import { MapPin, GraduationCap, Code2, Zap } from "lucide-react";
+import { EASE, FadeUp, SectionLabel } from "@/components/ui/motion";
+import { about, beforeFast, earlierRoles, roles } from "@/lib/data";
 
-const highlights = [
-  { icon: GraduationCap, label: "FAST NUCES", sub: "BS Computer Science · 2025–2029", color: "#8A9A5B" },
-  { icon: Code2, label: "5+ Projects", sub: "Games, AI, Web & Desktop", color: "#B6BE9C" },
-  { icon: Zap, label: "AI & CV", sub: "Python, MediaPipe, Computer Vision", color: "#66734F" },
-  { icon: MapPin, label: "Islamabad", sub: "Pakistan", color: "#C2A878" },
-];
+function Block({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <FadeUp className="border-t border-ink-line pt-6">
+      <h3 className="label">{title}</h3>
+      <div className="mt-5">{children}</div>
+    </FadeUp>
+  );
+}
+
+function Portrait() {
+  return (
+    <motion.div
+      className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] bg-ink-raised"
+      initial={{ clipPath: "inset(100% 0% 0% 0% round 22px)" }}
+      whileInView={{ clipPath: "inset(0% 0% 0% 0% round 22px)" }}
+      viewport={{ once: true, margin: "-15% 0px" }}
+      transition={{ duration: 1.4, ease: EASE }}
+    >
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1.3 }}
+        whileInView={{ scale: 1.12 }}
+        viewport={{ once: true, margin: "-15% 0px" }}
+        transition={{ duration: 1.8, ease: EASE }}
+        style={{ transformOrigin: "50% 0%" }}
+      >
+        <Image
+          src={about.photo}
+          alt="Abdul Zakir"
+          fill
+          sizes="(min-width: 1024px) 30vw, 90vw"
+          className="object-cover object-top grayscale contrast-[1.08]"
+        />
+      </motion.div>
+      <div aria-hidden className="absolute inset-0 bg-[#3a2416] mix-blend-screen" />
+      <div aria-hidden className="absolute inset-0 bg-ember-soft opacity-70 mix-blend-multiply" />
+      <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
+      <p className="absolute bottom-4 left-4 font-mono text-[10.5px] text-bone/80">
+        <span className="text-ember">fig. 2</span> me, minus the passport-photo blue
+      </p>
+    </motion.div>
+  );
+}
 
 export default function About() {
+  const [lead, ...rest] = about.paragraphs;
+
   return (
-    <div className="section-padding bg-[#0B0C09] relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#8A9A5B]/4 rounded-full blur-[120px] pointer-events-none" />
+    <section id="about" className="scroll-mt-16 py-24 sm:py-32">
+      <div className="wrap">
+        <SectionLabel>About</SectionLabel>
 
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section label */}
-        <Reveal>
-          <div className="flex items-center gap-3 mb-16">
-            <span className="font-mono text-sm text-[#8A9A5B]">01.</span>
-            <span className="font-mono text-sm text-[#666B60]">about_me</span>
-            <div className="flex-1 h-px bg-gradient-to-r from-[#8A9A5B]/20 to-transparent" />
-          </div>
-        </Reveal>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Photo side */}
-          <Reveal direction="left">
-            <div className="relative flex justify-center lg:justify-start">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <motion.div
-                  className="w-[340px] h-[340px] rounded-full border border-[#8A9A5B]/15"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.div
-                  className="absolute w-[400px] h-[400px] rounded-full border border-[#B6BE9C]/10"
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                />
-              </div>
-
-              {/* Photo */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10"
-              >
-                <div className="relative w-72 h-80 rounded-3xl overflow-hidden">
-                  {/* Glow border */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#8A9A5B] via-[#66734F] to-[#B6BE9C] p-[2px]">
-                    <div className="w-full h-full rounded-3xl overflow-hidden bg-[#12140F]">
-                      <Image
-                        src="/my-pic.jpeg"
-                        alt="Abdul Zakir"
-                        fill
-                        className="object-cover object-top"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating badge */}
-                <motion.div
-                  className="absolute -bottom-4 -right-4 glass border border-white/10 rounded-2xl px-4 py-3"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  <div className="text-xs text-[#B7B9AD]">Currently at</div>
-                  <div className="text-sm font-semibold text-white">FAST NUCES</div>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -top-4 -left-4 glass border border-white/10 rounded-2xl px-4 py-3"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                >
-                  <div className="text-xs text-[#B7B9AD]">Based in</div>
-                  <div className="text-sm font-semibold text-white">Islamabad</div>
-                </motion.div>
-              </motion.div>
+        <div className="mt-10 grid gap-14 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-24">
+              <Portrait />
             </div>
-          </Reveal>
-
-          {/* Text side */}
-          <div className="space-y-8">
-            <Reveal>
-              <h2 className="font-display font-bold text-4xl lg:text-5xl text-white leading-tight">
-                Building things that{" "}
-                <span className="gradient-text">actually work.</span>
-              </h2>
-            </Reveal>
-
-            <Stagger className="space-y-5">
-              {personalInfo.bio.map((para, i) => (
-                <StaggerItem key={i}>
-                  <p className="text-[#B7B9AD] text-lg leading-relaxed">{para}</p>
-                </StaggerItem>
-              ))}
-            </Stagger>
-
-            {/* Interest tags */}
-            <Reveal delay={0.3}>
-              <div className="flex flex-wrap gap-2">
-                {personalInfo.interests.map((interest, i) => (
-                  <motion.span
-                    key={interest}
-                    className="skill-tag px-3 py-1.5 rounded-full text-xs font-medium glass border border-white/8 text-[#B7B9AD] hover:text-white hover:border-[#8A9A5B]/40 cursor-default"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
-                  >
-                    {interest}
-                  </motion.span>
-                ))}
-              </div>
-            </Reveal>
-
-            {/* Languages */}
-            <Reveal delay={0.4}>
-              <div className="flex items-center gap-4 pt-2">
-                <span className="text-xs text-[#666B60] font-mono uppercase tracking-wider">Languages:</span>
-                <div className="flex flex-wrap items-center">
-                  {personalInfo.languages.map((lang, idx) => (
-                    <span key={lang.name} className="text-sm text-[#B7B9AD] flex items-center">
-                      <span>{lang.name}</span>
-                      {idx < personalInfo.languages.length - 1 && <span className="text-white/20 mx-2">·</span>}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
           </div>
-        </div>
 
-        {/* Highlight cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-20">
-          {highlights.map((h, i) => {
-            const Icon = h.icon;
-            return (
-              <Reveal key={h.label} delay={i * 0.1}>
-                <div className="glass border border-white/8 rounded-2xl p-5 hover:border-white/15 transition-all duration-300 group">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                    style={{ background: `${h.color}15`, border: `1px solid ${h.color}30` }}
-                  >
-                    <Icon size={18} style={{ color: h.color }} />
+          <div className="space-y-16 lg:col-span-7 lg:col-start-6">
+            <div>
+              <FadeUp>
+                <p className="text-[clamp(1.6rem,3vw,2.5rem)] font-medium leading-[1.15] tracking-tight">{lead}</p>
+              </FadeUp>
+              <FadeUp delay={0.1} className="mt-8 space-y-5 text-[16px] leading-relaxed text-bone-muted">
+                {rest.map((p) => (
+                  <p key={p.slice(0, 24)}>{p}</p>
+                ))}
+              </FadeUp>
+            </div>
+
+            <Block title="Roles">
+              <ul className="space-y-5">
+                {roles.map((r) => (
+                  <li key={r.role + r.org} className="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-6">
+                    <span className="font-mono text-[12px] text-bone-dim sm:pt-1">{r.when}</span>
+                    <span>
+                      <span className="text-[17px] text-bone">{r.role}</span>
+                      <span className="text-[17px] text-bone-muted">, {r.org}</span>
+                      <span className="mt-1 block text-[13.5px] text-bone-dim">{r.note}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Block>
+
+            <Block title="Education">
+              <ul className="space-y-4">
+                {about.education.map((e) => (
+                  <li key={e.where} className="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-6">
+                    <span className="font-mono text-[12px] text-bone-dim sm:pt-1">{e.when}</span>
+                    <span className="text-[15.5px]">
+                      <span className="text-bone">{e.where}</span>
+                      <span className="text-bone-muted"> · {e.what}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Block>
+
+            <Block title="Toolbox">
+              <dl className="space-y-4">
+                {about.toolbox.map((t) => (
+                  <div key={t.k} className="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-6">
+                    <dt className="font-mono text-[12px] text-bone-dim sm:pt-1">{t.k}</dt>
+                    <dd className="text-[15.5px] leading-relaxed text-bone">{t.v}</dd>
                   </div>
-                  <div className="font-semibold text-white text-sm mb-1">{h.label}</div>
-                  <div className="text-xs text-[#8E9285]">{h.sub}</div>
+                ))}
+                <div className="grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-6">
+                  <dt className="font-mono text-[12px] text-bone-dim sm:pt-1">Speaks</dt>
+                  <dd className="text-[15.5px] text-bone">{about.languages}</dd>
                 </div>
-              </Reveal>
-            );
-          })}
+              </dl>
+            </Block>
+
+            <Block title="Before FAST">
+              <ul className="space-y-3">
+                {earlierRoles.map((r) => (
+                  <li key={r.role + r.org} className="text-[15px] leading-relaxed">
+                    <span className="text-bone">{r.role}</span>
+                    <span className="text-bone-muted">, {r.org}</span>
+                    {r.note && <span className="text-bone-dim"> · {r.note}</span>}
+                  </li>
+                ))}
+              </ul>
+              <ul className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                {beforeFast.map((b) => (
+                  <li key={b.what} className="grid grid-cols-[4.75rem_1fr] gap-3 text-[13.5px] leading-snug">
+                    <span className="font-mono text-[11.5px] text-bone-dim">{b.when}</span>
+                    <span>
+                      <span className="text-bone">{b.what}</span>
+                      <span className="block text-bone-dim">{b.note}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Block>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

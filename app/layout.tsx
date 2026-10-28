@@ -1,61 +1,64 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import { Archivo, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { Toaster } from "sonner";
+import Providers from "@/components/Providers";
+import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const instrument = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Abdul Zakir — CS Student & Software Developer",
+  metadataBase: new URL("https://portfolio-abzakir1.vercel.app"),
+  title: "Abdul Zakir",
   description:
-    "Portfolio of Abdul Zakir — BS Computer Science student at FAST NUCES, Islamabad. Software developer, AI enthusiast, and builder of interactive digital experiences.",
-  keywords: [
-    "Abdul Zakir",
-    "FAST NUCES",
-    "Software Developer",
-    "Computer Science",
-    "AI",
-    "Pakistan",
-    "Portfolio",
-  ],
+    "CS student at FAST NUCES Islamabad. National finalist at the Alibaba Cloud AI Hackathon Pakistan 2026 with MedNuskha. I build AI agents, physics simulations and things people use.",
   authors: [{ name: "Abdul Zakir" }],
   openGraph: {
-    title: "Abdul Zakir — Software Developer & CS Student",
+    title: "Abdul Zakir",
     description:
-      "Portfolio of Abdul Zakir — builder, leader, and AI enthusiast from Islamabad.",
+      "MedNuskha, a ray-traced black hole, an AI sales agent, and Nuqta. Work by a CS student at FAST NUCES Islamabad.",
+    images: ["/work/blackhole/step6.png"],
     type: "website",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: "#0c0b0a",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-[#0B0C09] text-white antialiased">
-        {children}
+    <html lang="en" className={`${archivo.variable} ${instrument.variable} ${mono.variable}`}>
+      <body>
+        <Providers>{children}</Providers>
+        <div className="grain" aria-hidden />
         <Toaster
-          position="bottom-right"
+          position="bottom-center"
           toastOptions={{
             style: {
-              background: "#1A1D15",
-              border: "1px solid rgba(138,154,91,0.3)",
-              color: "#F2F0E8",
+              background: "#151311",
+              border: "1px solid #2a2622",
+              color: "#ede6da",
+              fontFamily: "var(--font-mono)",
+              fontSize: "12px",
             },
           }}
         />

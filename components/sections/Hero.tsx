@@ -1,217 +1,107 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import { personalInfo } from "@/lib/data";
-import MagneticButton from "@/components/ui/MagneticButton";
-import { Github, Linkedin, Mail, ChevronDown, Download, ExternalLink } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import BlackHoleCanvas from "@/components/BlackHoleCanvas";
+import { EASE } from "@/components/ui/motion";
+import { hero } from "@/lib/data";
 
-// Floating particle component
-function Particle({
-  delay,
-  x,
-  size,
-  duration,
-}: {
-  delay: number;
-  x: number;
-  size: number;
-  duration: number;
-}) {
+function Line({ children, delay }: { children: string; delay: number }) {
   return (
-    <motion.div
-      className="absolute bottom-0 rounded-full bg-gradient-to-t from-[#8A9A5B]/40 to-transparent pointer-events-none"
-      style={{ left: `${x}%`, width: size, height: size }}
-      initial={{ y: "0%", opacity: 0 }}
-      animate={{
-        y: [0, -800, -1200],
-        opacity: [0, 0.6, 0],
-        scale: [0.5, 1, 0.5],
-      }}
-      transition={{
-        duration,
-        delay,
-        repeat: Infinity,
-        ease: "easeOut",
-      }}
-    />
+    <span className="block overflow-hidden pb-[0.06em]">
+      <motion.span
+        className="block will-change-transform"
+        initial={{ y: "102%" }}
+        animate={{ y: "0%" }}
+        transition={{ duration: 1.2, delay, ease: EASE }}
+      >
+        {children}
+      </motion.span>
+    </span>
   );
 }
 
 export default function Hero() {
-  const particles = Array.from({ length: 20 }, (_, i) => {
-    const seed = (i * 37 + 17) % 100;
-    return {
-      id: i,
-      delay: (seed % 80) / 10,
-      x: (seed * 53) % 100,
-      size: 2 + ((seed * 29) % 40) / 10,
-      duration: 8 + ((seed * 11) % 40) / 10,
-    };
-  });
-
-  const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-  };
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const nameY = useTransform(scrollYProgress, [0, 1], ["0%", "-35%"]);
+  const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0B0C09]">
-      {/* Grid pattern */}
-      <div className="absolute inset-0 hero-grid opacity-60" />
+    <section ref={ref} id="top" className="relative h-[100svh] min-h-[620px] overflow-hidden">
+      <BlackHoleCanvas className="absolute inset-0 h-full w-full" progress={scrollYProgress} />
 
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#8A9A5B]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#B6BE9C]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#66734F]/5 blur-[150px] pointer-events-none" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-ink via-ink/60 to-transparent" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/80 to-transparent" />
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {particles.map((p) => (
-          <Particle
-            key={p.id}
-            delay={p.delay}
-            x={p.x}
-            size={p.size}
-            duration={p.duration}
-          />
-        ))}
-      </div>
-
-      {/* Main Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#8A9A5B]/30 text-sm text-[#B7B9AD] mb-8"
-        >
-          <span className="w-2 h-2 rounded-full bg-[#B6BE9C] animate-pulse" />
-          Available for Internships & Collaborations · Islamabad, Pakistan
-        </motion.div>
-
-        {/* Name */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <h1 className="font-display font-bold text-5xl sm:text-7xl lg:text-8xl text-white mb-4 tracking-tight leading-none">
-            Abdul{" "}
-            <span className="relative inline-block">
-              <span className="gradient-text">Zakir</span>
-              <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-[#8A9A5B] to-[#B6BE9C] rounded-full"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-                style={{ transformOrigin: "left" }}
-              />
-            </span>
-          </h1>
-        </motion.div>
-
-        {/* Typewriter */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-xl sm:text-2xl text-[#B7B9AD] mb-6 h-8 flex items-center justify-center"
-        >
-          <span className="font-mono text-[#8A9A5B] mr-2">→</span>
-          <TypeAnimation
-            sequence={[
-              "Software Developer", 2000,
-              "AI Enthusiast", 2000,
-              "Problem Solver", 2000,
-              "Computer Vision Explorer", 2000,
-              "Builder of Digital Experiences", 2000,
-              "CS Student @ FAST NUCES", 2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className="text-white font-medium"
-          />
-        </motion.div>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          className="text-[#8E9285] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
-          Second-year CS student at FAST NUCES who builds real things — from AI-powered 
-          computer vision systems to game engines in C++. I lead, I ship, I learn fast.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-12"
-        >
-          <MagneticButton variant="primary" size="lg" onClick={scrollToProjects}>
-            <ExternalLink size={16} />
-            View Projects
-          </MagneticButton>
-          <MagneticButton variant="ghost" size="lg" onClick={scrollToContact}>
-            <Mail size={16} />
-            Contact Me
-          </MagneticButton>
-          <MagneticButton variant="ghost" size="lg" href="https://github.com/abzakir">
-            <Github size={16} />
-            GitHub
-          </MagneticButton>
-          <MagneticButton variant="ghost" size="lg" href="https://www.linkedin.com/in/abdul-zakir-833793309">
-            <Linkedin size={16} />
-            LinkedIn
-          </MagneticButton>
-        </motion.div>
-
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-          className="flex flex-wrap items-center justify-center gap-8"
-        >
-          {personalInfo.stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.5 + i * 0.1 }}
-              className="text-center"
-            >
-              <div className="text-2xl font-display font-bold gradient-text">{stat.value}</div>
-              <div className="text-xs text-[#8E9285] mt-1">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#666B60] hover:text-white transition-colors cursor-pointer"
+      <motion.div
+        style={{ opacity: fade }}
+        className="pointer-events-none absolute left-4 top-20 sm:left-8 md:left-auto md:right-12 md:top-24 md:max-w-[17rem]"
       >
-        <span className="text-xs tracking-widest uppercase font-mono">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        <motion.p
+          className="font-mono text-[10.5px] leading-relaxed text-bone-muted md:text-right"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.6 }}
         >
-          <ChevronDown size={18} />
-        </motion.div>
-      </motion.button>
-    </div>
+          <span className="text-ember">fig. 1</span> <span className="md:hidden">{hero.figureShort}</span>
+          <span className="hidden md:inline">{hero.figure}</span>
+        </motion.p>
+      </motion.div>
+
+      <motion.div
+        style={{ y: nameY }}
+        className="pointer-events-none absolute inset-x-0 bottom-[calc(9rem+8vh)] sm:bottom-[11rem] md:bottom-[9.5rem]"
+      >
+        <div className="wrap">
+          <motion.p
+            className="label mb-5 !text-bone-muted"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+          >
+            {hero.label}
+            <span className="hidden sm:inline">{hero.labelMore}</span>
+          </motion.p>
+          <h1 className="display text-[min(23vw,26svh)] text-bone sm:text-[min(17vw,26svh)] lg:text-[min(15.5vw,25svh)] 2xl:text-[min(14rem,25svh)]">
+            <Line delay={0.25}>Abdul</Line>
+            <Line delay={0.37}>Zakir</Line>
+          </h1>
+        </div>
+      </motion.div>
+
+      <motion.div style={{ opacity: fade }} className="absolute inset-x-0 bottom-0 pb-8 sm:pb-10">
+        <div className="wrap flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <motion.p
+            className="max-w-[34rem] text-[15px] leading-relaxed text-bone-muted sm:text-[17px]"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.9, ease: EASE }}
+          >
+            {hero.intro}
+          </motion.p>
+
+          <motion.div
+            className="flex items-center justify-between gap-6 md:justify-end"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.1, ease: EASE }}
+          >
+            <a
+              href={hero.latest.href}
+              className="group inline-flex items-center gap-3 rounded-full border border-ink-line bg-ink/60 py-2 pl-2 pr-4 text-[13px] backdrop-blur transition-colors hover:border-ember/60"
+            >
+              <span className="rounded-full bg-ember px-2 py-0.5 font-mono text-[10px] font-medium uppercase tracking-wider text-ink">
+                New
+              </span>
+              <span>{hero.latest.text}</span>
+              <span aria-hidden className="transition-transform duration-500 ease-out group-hover:translate-y-0.5">
+                ↓
+              </span>
+            </a>
+          </motion.div>
+        </div>
+      </motion.div>
+    </section>
   );
 }

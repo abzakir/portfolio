@@ -1,432 +1,277 @@
-// Central data file for Abdul Zakir's portfolio
+// Everything the site says lives here. Components only lay it out.
 
-export const personalInfo = {
+export const me = {
   name: "Abdul Zakir",
-  firstName: "Abdul",
-  lastName: "Zakir",
-  initials: "AZ",
-  title: "CS Student & Software Developer",
-  location: "Islamabad, Pakistan",
+  shortName: "Zakir",
   email: "zakirbulaidi@gmail.com",
-  phone: "+92 300 1776024",
   github: "https://github.com/abzakir",
   linkedin: "https://www.linkedin.com/in/abdul-zakir-833793309",
-  university: "FAST NUCES, Islamabad",
-  degree: "BS Computer Science",
-  expectedGrad: "2029",
-  taglines: [
-    "Software Developer",
-    "AI Enthusiast",
-    "Problem Solver",
-    "Computer Vision Explorer",
-    "Builder of Digital Experiences",
-    "Future Software Engineer",
-  ],
-  bio: [
-    "Second-year CS student at FAST NUCES — writing code that matters, leading teams that deliver, and building products that solve real problems.",
-    "I sit at the intersection of technical depth and human creativity. Whether it's computer vision, game systems, or interactive web experiences, I build things that work and feel great.",
-    "I believe in shipping real projects, not just studying them.",
-  ],
-  stats: [
-    { value: "2+", label: "Years at FAST" },
-    { value: "5+", label: "Projects Shipped" },
-    { value: "3", label: "Languages Spoken" },
-    { value: "8+", label: "Awards & Certs" },
-  ],
-  interests: [
-    "Software Engineering", "Artificial Intelligence", "Computer Vision",
-    "Linux", "Game Development", "System Design", "Problem Solving",
-    "Public Speaking", "Leadership", "Product Building"
-  ],
-  languages: [
-    { name: "English", level: "Professional Proficiency" },
-    { name: "Urdu", level: "Native" },
-    { name: "Sindhi", level: "Native" },
-  ],
+  resume: "/Abdul_Zakir_Resume_Premium.pdf",
+  city: "Islamabad",
+  timeZone: "Asia/Karachi",
 };
 
-export const skills = {
-  languages: [
-    { name: "C", icon: "code", color: "#A8B9CC", desc: "Systems & low-level programming", image: "/c-logo.png" },
-    { name: "C++", icon: "code2", color: "#00599C", desc: "OOP, game dev, performance-critical code", image: "/cpp-logo.png" },
-    { name: "Python", icon: "terminal", color: "#3776AB", desc: "AI, automation, scripting", image: "/python-logo.jpg" },
-    { name: "HTML", icon: "globe", color: "#E34F26", desc: "Semantic web structure", image: "/html-logo.png" },
-    { name: "CSS", icon: "palette", color: "#1572B6", desc: "Responsive styling & animations", image: "/css-logo.png" },
-  ],
-  tools: [
-    { name: "Git", icon: "git", color: "#F05032", desc: "Version control & collaboration" },
-    { name: "GitHub", icon: "github", color: "#6E40C9", desc: "Open source & project hosting" },
-    { name: "Linux", icon: "linux", color: "#FCC624", desc: "Command line & system ops" },
-    { name: "VS Code", icon: "vscode", color: "#007ACC", desc: "Primary development environment" },
-  ],
-  libraries: [
-    { name: "SFML", icon: "sfml", color: "#8CC445", desc: "2D graphics & game development" },
-    { name: "MediaPipe", icon: "mediapipe", color: "#00897B", desc: "Real-time computer vision ML" },
-  ],
+export const hero = {
+  label: "CS @ FAST NUCES Islamabad",
+  labelMore: " · class of 2029",
+  intro:
+    "I build AI agents, physics simulations and the occasional startup. Lately: a WhatsApp agent that keeps elderly patients on their medicine, and a black hole ray-traced from the equations up.",
+  latest: {
+    text: "National finalist, Alibaba Cloud AI Hackathon 2026",
+    href: "#recent",
+  },
+  figure: "Schwarzschild black hole with an accretion disk, ray-traced live in your browser. My code. Drag to orbit.",
+  figureShort: "My black hole ray tracer, running live.",
 };
 
-export const education = [
+export type Win = {
+  when: string;
+  event: string;
+  result: string;
+  body: string;
+  figure?: { value: number; prefix?: string; of: string };
+  role?: string;
+  link?: { label: string; href: string };
+};
+
+export const recent: Win[] = [
   {
-    institution: "FAST National University",
-    degree: "BS Computer Science",
-    period: "2025 – 2029",
-    location: "Islamabad, Pakistan",
-    details: "Second-year student. Coursework in DSA, OOP, systems programming, and software engineering.",
-    type: "university",
-    icon: "graduation",
+    when: "Oct 2026",
+    event: "Alibaba Cloud AI Hackathon Pakistan",
+    result: "National finalist",
+    body: "I led team Runtime Terrors and presented MedNuskha at the national final, at the Pak-China Friendship Center in Islamabad on 24 October.",
+    figure: { value: 300, prefix: "top ", of: "of 16,000+ projects" },
+    link: {
+      label: "Verify certificate",
+      href: "https://aihackathon.cognix-pk.com/certificate/A8DS-CSFZ-8PKG",
+    },
   },
   {
-    institution: "Aga Khan Higher Secondary School",
-    degree: "Intermediate (FSc/A-Levels equivalent)",
-    period: "Completed",
-    location: "Hyderabad, Sindh",
-    details: "Grade: 91.6% | Board: Aga Khan University Examination Board",
-    type: "school",
-    icon: "school",
+    when: "Aug 2026",
+    event: "AgentHack by AI Season",
+    result: "6th place",
+    body: "With my team I built an AI sales agent that goes from a company PDF to a booked meeting, and shows the evidence behind every lead it scores.",
+    figure: { value: 6, of: "of 40 teams" },
   },
   {
-    institution: "Public School Hyderabad",
-    degree: "Matriculation",
-    period: "Completed",
-    location: "Hyderabad, Sindh",
-    details: "Grade: 84.5% | Board: Aga Khan University Examination Board",
-    type: "school",
-    icon: "bookOpen",
+    when: "Fall 2026",
+    event: "NaSCON 2026",
+    result: "Organising team",
+    body: "One of Pakistan's biggest student tech events, hosted at FAST Islamabad. I worked in operations, the part of an event nobody notices when it goes right.",
+    role: "Officer, Operations",
   },
 ];
 
-export const experience = [
-  {
-    title: "Co-Founder & Technical Lead",
-    company: "Nuqta (joinnuqta.org)",
-    period: "2025 – Present",
-    type: "startup",
-    icon: "sparkles",
-    color: "#8A9A5B",
-    description: "Co-founded Pakistan's largest student mentorship platform with Zayam. Together, engineered the full-stack web application, recruited and vetted high-achieving mentors, and led community growth.",
-    highlights: [
-      "Co-founded Nuqta with Zayam & collaboratively built full-stack platform",
-      "Recruited, interviewed & onboarded verified student mentors",
-      "Built Student, Mentor, and Admin real-time management dashboards",
-      "Fostered a thriving mentorship community for aspiring learners across Pakistan",
+export type Link = { label: string; href: string };
+
+export const medNuskha = {
+  kicker: "Alibaba Cloud AI Hackathon · national finalist",
+  title: "MedNuskha",
+  line: "A WhatsApp care agent that keeps elderly patients on their medication.",
+  body: [
+    "A caretaker adds a parent and their medicines on the website. After that the patient gets a WhatsApp message at every dose, with an Urdu voice note, and just replies. Typed or spoken, Urdu script, Roman Urdu or English: “le li” counts. If nobody answers, it nudges once and then tells the family.",
+    "The rule I cared about most: the AI never guesses about medicine. It only repeats what a caretaker has confirmed, and when two doses are pending and the reply is unclear, it asks which one.",
+  ],
+  facts: [
+    { k: "Role", v: "Team lead, main dev" },
+    { k: "Status", v: "Live in production" },
+    { k: "Tests", v: "251 passing" },
+  ],
+  stack: ["Python", "FastAPI", "Next.js", "Node + Baileys", "Supabase", "Qwen", "Whisper", "Docker"],
+  links: [
+    { label: "Live site", href: "https://mednuskha.vercel.app" },
+    { label: "Code", href: "https://github.com/abzakir/MedNuskhaV1" },
+  ] as Link[],
+  chat: {
+    patient: "Ammi ji",
+    caretaker: "Usman",
+    morning: [
+      { from: "bot", time: "08:00", text: "Ammi ji, 8 baj gaye. Panadol 500mg lene ka waqt hai. Khane ke baad lein." },
+      { from: "bot", time: "08:00", voice: "0:06" },
+      { from: "patient", time: "08:04", text: "le li" },
+      { from: "bot", time: "08:04", text: "Shukriya Ammi ji. Panadol 500mg le li, likh liya hai." },
+    ],
+    evening: [
+      { time: "20:00", text: "Reminder sent" },
+      { time: "20:15", text: "No reply. Gentle follow-up" },
+      { time: "20:30", text: "Still nothing. Family alerted" },
+    ],
+    alert: "Ammi ne aaj 8 baje ki Panadol 500mg confirm nahi ki. Do baar yaad dilaya gaya hai.",
+  },
+};
+
+export const blackHole = {
+  kicker: "Personal project · C++ and GLSL",
+  title: "Black Hole",
+  line: "A Schwarzschild black hole, ray-traced from the geodesic equations up.",
+  body: [
+    "I watched Kavan's video on simulating a black hole in C++ and wanted to actually understand it, so I rebuilt it in SFML one small program at a time. Straight rays first, then an event horizon, bending light, RK4, and finally a GPU ray tracer with a Doppler-shifted accretion disk.",
+    "When I checked the original shader against the textbook formula, its shadow came out about 40% too small. One term used r where it needed r − rₛ, and the photon sphere vanished. Mine gets the size right, and it's the one running at the top of this page.",
+  ],
+  steps: [
+    { n: "01", title: "Straight rays", note: "Light flies straight through.", img: "/work/blackhole/step1.png" },
+    { n: "02", title: "Event horizon", note: "Rays that reach rₛ are gone.", img: "/work/blackhole/step2.png" },
+    { n: "03", title: "Bending light", note: "Schwarzschild geodesics, Euler.", img: "/work/blackhole/step3.png" },
+    { n: "04", title: "RK4", note: "Gold is RK4, blue is Euler.", img: "/work/blackhole/step4.png" },
+    { n: "05", title: "3D on the GPU", note: "921,600 rays every frame.", img: "/work/blackhole/step5_stars.png" },
+    { n: "06", title: "Accretion disk", note: "Redshift and Doppler beaming.", img: "/work/blackhole/step6.png" },
+  ],
+  stack: ["C++17", "SFML 3", "GLSL", "WebGL", "CMake"],
+  links: [
+    { label: "Run it in your browser", href: "https://abzakir.github.io/blackhole/demo/" },
+    { label: "Code, step by step", href: "https://github.com/abzakir/blackhole" },
+  ] as Link[],
+};
+
+export const autopilot = {
+  kicker: "AgentHack by AI Season · 6th of 40",
+  title: "Sales Autopilot",
+  line: "An AI sales agent that turns a company PDF into booked meetings.",
+  body: [
+    "You give it a company document and a description of the customer you want. It finds prospects, drops the bad ones cheaply, researches the promising ones, scores them, writes the email, reads the reply, books the meeting and pings you on WhatsApp.",
+    "The language model never touches the numbers. Every score is plain code with a source URL behind each point, so the same evidence always gives the same result.",
+  ],
+  funnel: [
+    { label: "Discovered", value: 27 },
+    { label: "Worth a look", value: 15 },
+    { label: "Researched", value: 6 },
+    { label: "Qualified", value: 3 },
+  ],
+  lead: {
+    name: "SwiftHaul Logistics",
+    score: 96,
+    factors: [
+      { k: "ICP fit", v: 25, max: 25 },
+      { k: "Problem fit", v: 23, max: 25 },
+      { k: "Service fit", v: 18.8, max: 20 },
+      { k: "Buying signals", v: 15, max: 15 },
+      { k: "Company size", v: 5, max: 5 },
+      { k: "Location", v: 5, max: 5 },
+      { k: "Evidence quality", v: 4.5, max: 5 },
     ],
   },
-  {
-    title: "Contract Sales Representative",
-    company: "State Life Insurance Corporation of Pakistan",
-    period: "2026",
-    type: "professional",
-    icon: "briefcase",
-    color: "#C2A878",
-    description: "Worked in a professional B2C sales environment, managing client relationships and driving conversions through effective communication and negotiation.",
-    highlights: [
-      "Client communication & relationship management",
-      "Negotiation & persuasion in a professional setting",
-      "Built confidence in public-facing, high-stakes conversations",
-      "Developed real-world business and sales acumen",
-    ],
-  },
-];
+  stack: ["Python", "FastAPI", "SQLAlchemy", "React", "TypeScript", "Groq"],
+  note: "Team project. The repo is private.",
+};
 
-export const leadership = [
-  {
-    title: "Captain, Student Council",
-    organization: "Aga Khan Higher Secondary School Hyderabad",
-    icon: "award",
-    color: "#8A9A5B",
-    description: "Led a student body of 1,800+ students. Coordinated council responsibilities, organized initiatives, and represented student interests at the institutional level.",
-    impact: "1,800+ students represented",
-  },
-  {
-    title: "President, English Club",
-    organization: "Aga Khan Higher Secondary School Hyderabad",
-    icon: "mic",
-    color: "#B6BE9C",
-    description: "Led club activities and organized English-language events that boosted communication skills, public speaking, and confidence among peers.",
-    impact: "Organized 5+ events",
-  },
-  {
-    title: "Team Leader",
-    organization: "Multiple Academic Projects",
-    icon: "users",
-    color: "#66734F",
-    description: "Served as team leader across multiple academic projects including the Civics project. Coordinated task distribution, managed timelines, and ensured quality delivery.",
-    impact: "Led cross-functional teams",
-  },
-  {
-    title: "Founder & CEO",
-    organization: "ZBM Lifestyle",
-    icon: "store",
-    color: "#A56F5A",
-    description: "Founded and operated an e-commerce lifestyle brand for one year. Managed product sourcing, branding, marketing, and customer interactions. Closed to prioritize FAST — proof of academic discipline.",
-    impact: "1 year of operations",
-  },
-];
-
-export const projects = [
-  {
-    title: "FocusFlow",
-    tagline: "Windows productivity desktop app",
-    description: "A Windows .exe productivity application designed to help users improve focus, track study sessions, and build better habits through structured work intervals.",
-    tech: ["C++", "Windows API", "SFML"],
-    features: ["Focus timer & session tracking", "Study habit analytics", "Minimal distraction UI", "Desktop native performance"],
-    category: "Desktop App",
-    icon: "clock",
-    color: "#8A9A5B",
-    github: "https://github.com/abzakir",
-    status: "Shipped",
-  },
-  {
-    title: "Hand Gesture PC Controller",
-    tagline: "Control your PC with hand gestures",
-    description: "Real-time computer vision system using Python and MediaPipe to recognize hand gestures and translate them into system control inputs — no mouse, no keyboard.",
-    tech: ["Python", "MediaPipe", "OpenCV", "Computer Vision"],
-    features: ["Real-time hand tracking", "Gesture-to-command mapping", "Mouse & keyboard control", "Low-latency pipeline"],
-    category: "AI / CV",
-    icon: "activity",
-    color: "#B6BE9C",
-    github: "https://github.com/abzakir",
-    status: "Shipped",
-  },
-  {
-    title: "TumblePop Clone",
-    tagline: "Classic arcade game in C++ with OOP",
-    description: "A feature-complete clone of the classic TumblePop arcade game, built from scratch in C++ using object-oriented design principles and SFML for graphics.",
-    tech: ["C++", "SFML", "OOP", "Game Loop"],
-    features: ["Collision detection system", "Game state management", "Enemy AI patterns", "Score & progression logic"],
-    category: "Game Dev",
-    icon: "gamepad",
-    color: "#66734F",
-    github: "https://github.com/abzakir",
-    status: "Shipped",
-  },
-  {
-    title: "Metal Slug Clone",
-    tagline: "Side-scrolling shooter in C++ OOP",
-    description: "A side-scrolling run-and-gun game inspired by Metal Slug, built in C++ with a full OOP architecture — including enemy systems, animations, and level design.",
-    tech: ["C++", "SFML", "OOP", "Animation System"],
-    features: ["Side-scrolling level system", "Enemy AI & pathfinding", "Character animation FSM", "Projectile & hitbox system"],
-    category: "Game Dev",
-    icon: "target",
-    color: "#A56F5A",
-    github: "https://github.com/abzakir",
-    status: "Shipped",
-  },
-  {
-    title: "Web Design Projects",
-    tagline: "Responsive frontend interfaces",
-    description: "A collection of modern, responsive web design projects showcasing frontend skills — clean layouts, visual design sensibility, and mobile-first development.",
-    tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    features: ["Mobile-first layouts", "CSS animations & transitions", "Clean visual hierarchy", "Cross-browser compatibility"],
-    category: "Frontend",
-    icon: "layout",
-    color: "#C2A878",
-    github: "https://github.com/abzakir",
-    status: "Ongoing",
-  },
-];
-
-export const achievements = [
-  {
-    title: "World AI Competition for Youth",
-    subtitle: "Participant — 2020 & 2021",
-    description: "Participated twice in this prestigious global youth AI competition, showcasing AI projects and competing on an international level.",
-    category: "AI",
-    icon: "cpu",
-    color: "#B6BE9C",
-    year: "2020–2021",
-    type: "Competition",
-    image: "/waicy-logo.webp",
-  },
-  {
-    title: "AKESP MUN",
-    subtitle: "Honourable Mention",
-    description: "Received Honourable Mention at the AKESP Model United Nations conference for outstanding debate, diplomacy, and resolution writing.",
-    category: "MUN",
-    icon: "globe",
-    color: "#8A9A5B",
-    year: "2022",
-    type: "Award",
-  },
-  {
-    title: "HDMUN",
-    subtitle: "Honourable Mention",
-    description: "Recognized with Honourable Mention at HDMUN for strong committee performance and diplomatic skills.",
-    category: "MUN",
-    icon: "globe",
-    color: "#66734F",
-    year: "2022",
-    type: "Award",
-  },
-  {
-    title: "Open House — Water Monitoring System",
-    subtitle: "Participation Certificate",
-    description: "Built and presented a Water Monitoring System focused on sea monitoring, earthquake detection, and environmental awareness.",
-    category: "STEM",
-    icon: "droplet",
-    color: "#B6BE9C",
-    year: "2022",
-    type: "Exhibition",
-  },
-  {
-    title: "STEAM Competition — AI Skin Analysis",
-    subtitle: "Category: Artificial Intelligence",
-    description: "Developed an AI-powered skin analysis model, trained and deployed for the STEAM Competition organized by the Regional Directorate in collaboration with Government of Sindh.",
-    category: "AI",
-    icon: "flask",
-    color: "#C2A878",
-    year: "2023",
-    type: "Competition",
-  },
-  {
-    title: "All Sindh Youth Spelling Bee",
-    subtitle: "Participant",
-    description: "Competed in the All Sindh Youth Spelling Bee Competition, representing English language proficiency at provincial level.",
-    category: "Language",
-    icon: "book",
-    color: "#A56F5A",
-    year: "2022",
-    type: "Competition",
-  },
-];
-
-export const timeline = [
-  {
-    year: "2020",
-    title: "First Steps in AI",
-    description: "Participated in the World AI Competition for Youth — my first real exposure to artificial intelligence and competitive tech.",
-    icon: "cpu",
-    color: "#B6BE9C",
-  },
-  {
-    year: "2021",
-    title: "AI Competition (Again)",
-    description: "Returned to the World AI Competition for Youth with more depth and confidence. Back-to-back participation at an international level.",
-    icon: "repeat",
-    color: "#8A9A5B",
-  },
-  {
-    year: "2022",
-    title: "Leadership & Recognition",
-    description: "Elected Captain of Student Council (1,800+ students), President of English Club, and earned Honourable Mentions at AKESP MUN and HDMUN.",
-    icon: "award",
-    color: "#C2A878",
-  },
-  {
-    year: "2023",
-    title: "Builder Mode",
-    description: "STEAM Competition win with AI Skin Analysis. Founded ZBM Lifestyle e-commerce brand.",
-    icon: "zap",
-    color: "#66734F",
-  },
-  {
-    year: "2025",
-    title: "FAST NUCES — Chapter Begins",
-    description: "Enrolled in BS Computer Science at FAST National University, Islamabad. Started building real software: games in C++, computer vision in Python.",
-    icon: "graduation",
-    color: "#A56F5A",
-  },
-  {
-    year: "2025",
-    title: "Shipping Real Projects",
-    description: "FocusFlow desktop app, Hand Gesture Controller, Metal Slug & TumblePop clones. Deep dives into OOP, systems programming, and AI tooling.",
-    icon: "code",
-    color: "#B6BE9C",
-  },
-  {
-    year: "2026",
-    title: "Professional Sales",
-    description: "Began contract role at State Life Insurance. Enhancing real-world negotiation, relationship management, and B2C communication.",
-    icon: "briefcase",
-    color: "#C2A878",
-  },
-  {
-    year: "→ 2029",
-    title: "The Road Ahead",
-    description: "Building toward a career in software engineering and AI. Every project, every line of code, every challenge is preparation for what comes next.",
-    icon: "sparkles",
-    color: "#8A9A5B",
-  },
-];
-
-export const nuqtaData = {
-  name: "Nuqta",
+export const nuqta = {
+  kicker: "Startup · co-founded with Zayam",
+  title: "Nuqta",
+  line: "Mentorship for Pakistani students, from people who've already done what they're aiming for.",
+  body: "Zayam and I built the whole platform ourselves: student, mentor and admin dashboards, session booking and mentor verification. It's live, and we're still adding mentors and features.",
+  stack: ["JavaScript", "Vercel functions", "Neon Postgres", "JWT auth"],
   logo: "/icon.png",
-  website: "https://www.joinnuqta.org",
-  tagline: "Building the Future of Student Mentorship in Pakistan",
-  shortDesc: "Nuqta is an EdTech startup I co-founded with Zayam and fellow Computer Science students from FAST NUCES Islamabad. Together, we built Pakistan's largest student mentorship platform to bridge the gap between high-achieving students and those seeking guidance.",
-  fullDesc: [
-    "Nuqta is an EdTech startup I co-founded with Zayam and fellow Computer Science students from FAST NUCES Islamabad. Together, we designed and built the entire platform to bridge the gap between high-achieving students and those seeking guidance by creating Pakistan's largest student mentorship platform.",
-    "The platform connects students with verified mentors who have excelled in board examinations, university admissions, scholarships, internships, competitive programming, freelancing, entrepreneurship, and career development.",
-    "Students receive personalized mentorship, academic guidance, career advice, and access to a growing community of ambitious learners committed to achieving their goals."
-  ],
-  mission: {
-    highlight: "Every student deserves access to the right guidance at the right time.",
-    text: "Nuqta exists to connect ambitious students with mentors who have already walked the path they aspire to follow, making quality mentorship accessible, trustworthy, and impactful for students across Pakistan."
-  },
-  impactStats: [
-    { title: "Students Supported", badge: "Growing", icon: "GraduationCap", color: "#8A9A5B" },
-    { title: "Verified Mentors", badge: "Growing", icon: "UserCheck", color: "#B6BE9C" },
-    { title: "Growing Community", badge: "Expanding", icon: "Globe", color: "#C2A878" },
-    { title: "Live Platform", badge: "Live Now", icon: "Rocket", color: "#93A66D" },
-  ],
-  features: [
-    { name: "Verified Mentors", desc: "Vetted top achievers with proven academic and industry track records", icon: "ShieldCheck" },
-    { name: "Student Dashboard", desc: "Intuitive portal for booking, tracking progress, and accessing resources", icon: "LayoutDashboard" },
-    { name: "Mentor Dashboard", desc: "Streamlined schedule management and session tracking tools", icon: "CalendarCheck" },
-    { name: "Admin Dashboard", desc: "Centralized control panel for system oversight, verification, and analytics", icon: "Sliders" },
-    { name: "Personalized Mentorship", desc: "1-on-1 tailor-made guidance aligned with individual goals", icon: "Sparkles" },
-    { name: "Academic Roadmaps", desc: "Step-by-step guidance for board exams, SATs, ECAT, and university entrance", icon: "Compass" },
-    { name: "Career Guidance", desc: "Insights into freelancing, internships, software engineering, and startups", icon: "Briefcase" },
-    { name: "Community Support", desc: "Peer-to-peer learning network and collaborative student groups", icon: "Users" },
-    { name: "Secure Authentication", desc: "Bank-grade data privacy and secure user authentication", icon: "Lock" },
-    { name: "Real-Time Platform", desc: "Instant notifications, status updates, and interactive sessions", icon: "Zap" },
-    { name: "Mentor Profiles", desc: "Detailed portfolio profiles highlighting expertise and achievements", icon: "User" },
-    { name: "Mentorship Session Booking", desc: "Seamless calendar integration and automated session scheduling", icon: "Clock" },
-  ],
-  techStack: [
-    { name: "React", category: "Frontend", color: "#61DAFB" },
-    { name: "Next.js", category: "Framework", color: "#FFFFFF" },
-    { name: "Node.js", category: "Runtime", color: "#339933" },
-    { name: "Express.js", category: "Backend", color: "#828282" },
-    { name: "MongoDB", category: "Database", color: "#47A248" },
-    { name: "Tailwind CSS", category: "Styling", color: "#06B6D4" },
-    { name: "REST APIs", category: "Architecture", color: "#8A9A5B" },
-    { name: "Git", category: "Version Control", color: "#F05032" },
-    { name: "GitHub", category: "Repository", color: "#A8B9CC" },
-  ],
-  timeline: [
-    { milestone: "Idea Validated", done: true, desc: "Market research & student demand assessment" },
-    { milestone: "Core Team Formed", done: true, desc: "Co-founded by Zayam & Zakir with CS students from FAST NUCES" },
-    { milestone: "Mentor Recruitment", done: true, desc: "Onboarding top academic & technical talent" },
-    { milestone: "Community Established", done: true, desc: "Initial cohort of ambitious learners" },
-    { milestone: "Full-Stack Platform Developed", done: true, desc: "Built collaboratively by Zayam & Zakir" },
-    { milestone: "Student Dashboard", done: true, desc: "Interactive student portal shipped" },
-    { milestone: "Mentor Dashboard", done: true, desc: "Mentor availability & session control" },
-    { milestone: "Admin Dashboard", done: true, desc: "Verification and ecosystem management" },
-    { milestone: "Authentication & Database Integration", done: true, desc: "Secure DB schemas and auth flows" },
-    { milestone: "Website Officially Launched", done: true, isHighlight: true, desc: "Live at joinnuqta.org" },
-  ],
-  launchNote: "Nuqta has officially launched and is actively connecting students with experienced mentors across Pakistan. We continue improving the platform by introducing new features, enhancing user experience, and expanding our mentor network to make quality guidance accessible for every student.",
-  currentStatus: {
-    status: "LIVE",
-    phase: "Growth & Feature Development",
-    focus: [
-      "Expanding mentor network",
-      "Improving user experience",
-      "Scaling the student community",
-      "Building advanced mentorship features"
-    ]
-  },
-  vision: {
-    quote: "Every successful student has a story. Nuqta exists to ensure every aspiring student has someone to learn from.",
-    desc: "Our long-term vision is to become Pakistan's largest student mentorship ecosystem, empowering millions of learners to make informed academic and career decisions through trusted guidance, meaningful mentorship, and a thriving community of future leaders."
-  },
-  founderNote: {
-    title: "From the Founder",
-    quote: "I believe talent exists everywhere, but guidance doesn't. Nuqta is my attempt to change that.",
-    author: "Zakir",
-    role: "Co-Founder, Nuqta"
-  }
+  links: [{ label: "joinnuqta.org", href: "https://www.joinnuqta.org" }] as Link[],
 };
 
+export const moreWork = [
+  {
+    name: "FocusFlow",
+    what: "Offline focus timer, tasks and a private journal for Windows. Nothing leaves your PC.",
+    stack: "Python · PySide6 · SQLite",
+    href: "https://github.com/abzakir/focusflow",
+  },
+  {
+    name: "Metal Slug: Iron Requiem",
+    what: "Fan-made run-and-gun with three missions, vehicles and a survival mode.",
+    stack: "C++20 · SFML",
+    href: "https://github.com/abzakir/metal-slug-iron-requim",
+  },
+  {
+    name: "Tumble Pop",
+    what: "Arcade platformer remake, written to learn OOP properly.",
+    stack: "C++ · SFML",
+    href: "https://github.com/abzakir/tumble-pop-sfml",
+  },
+  {
+    name: "Gesture particles",
+    what: "A 3D particle system you steer with your hand through the webcam.",
+    stack: "JavaScript · Three.js · Electron",
+    href: "https://github.com/abzakir/hand-gesture-particle-system",
+  },
+  {
+    name: "Gesture PC controller",
+    what: "Move the cursor and click with hand gestures.",
+    stack: "Python · MediaPipe · OpenCV",
+  },
+  {
+    name: "Finora",
+    what: "Personal finance dashboard for spotting where the money goes.",
+    stack: "TypeScript · React · Vite",
+    href: "https://github.com/abzakir/finora",
+  },
+  {
+    name: "GitPulse",
+    what: "Local-first dashboard for your own Git history.",
+    stack: "Python · Tkinter",
+    href: "https://github.com/abzakir/git-pulse",
+  },
+  {
+    name: "Neuro Latency",
+    what: "Reaction-time test that runs in the browser.",
+    stack: "JavaScript",
+    href: "https://github.com/abzakir/neuro-latency",
+  },
+  {
+    name: "Live Vote Telecast",
+    what: "Simulated live election results, recorded on a blockchain.",
+    stack: "HTML · JavaScript",
+    href: "https://github.com/abzakir/live-vote-telecast-blockchain",
+  },
+  {
+    name: "Password strength checker",
+    what: "Command-line password checker.",
+    stack: "C++",
+    href: "https://github.com/abzakir/password-strength-checker",
+  },
+];
+
+export const roles = [
+  { when: "2025 – now", role: "Co-founder", org: "Nuqta", note: "Building the platform with Zayam." },
+  { when: "Fall 2026", role: "Officer, Operations", org: "NaSCON 2026 organising team", note: "FAST NUCES Islamabad." },
+  { when: "2026", role: "Team lead", org: "Runtime Terrors", note: "MedNuskha, Alibaba Cloud AI Hackathon." },
+  { when: "2026", role: "Sales representative (contract)", org: "State Life Insurance", note: "Client calls, follow-ups, closing." },
+];
+
+export const earlierRoles = [
+  { role: "Captain, Student Council", org: "Aga Khan Higher Secondary School, Hyderabad", note: "1,800+ students" },
+  { role: "President, English Club", org: "Aga Khan Higher Secondary School, Hyderabad" },
+  { role: "Founder", org: "ZBM Lifestyle", note: "Ran a small e-commerce brand for a year, then closed it for FAST" },
+];
+
+export const beforeFast = [
+  { when: "2023", what: "STEAM Competition, AI category", note: "Skin analysis model. Regional Directorate with the Govt. of Sindh" },
+  { when: "2022", what: "AKESP MUN", note: "Honourable mention" },
+  { when: "2022", what: "HDMUN", note: "Honourable mention" },
+  { when: "2022", what: "Open House", note: "Water monitoring system" },
+  { when: "2022", what: "All Sindh Youth Spelling Bee", note: "Participant" },
+  { when: "2020, 2021", what: "World AI Competition for Youth", note: "Took part twice" },
+];
+
+export const about = {
+  photo: "/my-pic.jpeg",
+  paragraphs: [
+    "I'm Zakir. I grew up in Hyderabad, Sindh, and moved to Islamabad for computer science at FAST NUCES, where I'm in my second year.",
+    "Most of what I build starts with wanting to understand something. The black hole began as a video I couldn't stop thinking about. MedNuskha began with a simpler question: would an elderly parent ever learn a new app? They wouldn't, so it lives in WhatsApp.",
+    "I like problems where being slightly wrong matters, so I test things, measure them and write down what I find.",
+  ],
+  education: [
+    { when: "2025 – 2029", where: "FAST NUCES, Islamabad", what: "BS Computer Science" },
+    { when: "Intermediate", where: "Aga Khan Higher Secondary School, Hyderabad", what: "91.6%, AKU-EB" },
+    { when: "Matric", where: "Public School Hyderabad", what: "84.5%, AKU-EB" },
+  ],
+  languages: "English, Urdu, Sindhi",
+  toolbox: [
+    { k: "Languages", v: "C, C++, Python, TypeScript, JavaScript, GLSL, SQL" },
+    { k: "Building with", v: "Next.js, React, FastAPI, Node, SFML, PySide6, Three.js" },
+    { k: "Data and infra", v: "Postgres (Supabase, Neon), SQLite, Docker, Vercel, Linux, Git" },
+    { k: "AI", v: "LLM agents, Whisper, MediaPipe, OpenCV" },
+  ],
+};
+
+export const nav = [
+  { label: "Recent", href: "#recent" },
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
