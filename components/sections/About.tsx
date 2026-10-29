@@ -17,7 +17,7 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
 function Portrait() {
   return (
     <motion.div
-      className="relative aspect-[4/5] w-full overflow-hidden rounded-[22px] bg-ink-raised"
+      className="group relative aspect-[4/5] w-full overflow-hidden rounded-[22px] bg-ink-raised"
       initial={{ clipPath: "inset(100% 0% 0% 0% round 22px)" }}
       whileInView={{ clipPath: "inset(0% 0% 0% 0% round 22px)" }}
       viewport={{ once: true, margin: "-15% 0px" }}
@@ -25,25 +25,25 @@ function Portrait() {
     >
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1.3 }}
-        whileInView={{ scale: 1.12 }}
+        initial={{ scale: 1.2 }}
+        whileInView={{ scale: 1 }}
         viewport={{ once: true, margin: "-15% 0px" }}
         transition={{ duration: 1.8, ease: EASE }}
-        style={{ transformOrigin: "50% 0%" }}
       >
         <Image
           src={about.photo}
-          alt="Abdul Zakir"
+          alt="Abdul Zakir with a microphone, asking a question from the audience"
           fill
           sizes="(min-width: 1024px) 30vw, 90vw"
-          className="object-cover object-top grayscale contrast-[1.08]"
+          className="object-cover object-[50%_52%] grayscale contrast-[1.08] transition-[filter] duration-700 group-hover:grayscale-0"
         />
       </motion.div>
-      <div aria-hidden className="absolute inset-0 bg-[#3a2416] mix-blend-screen" />
-      <div aria-hidden className="absolute inset-0 bg-ember-soft opacity-70 mix-blend-multiply" />
+      {/* Warm duotone so the blue seats sit with the palette; hover shows the real colours. */}
+      <div aria-hidden className="absolute inset-0 bg-[#3a2416] mix-blend-screen transition-opacity duration-700 group-hover:opacity-0" />
+      <div aria-hidden className="absolute inset-0 bg-ember-soft opacity-70 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-0" />
       <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/70 to-transparent" />
       <p className="absolute bottom-4 left-4 font-mono text-[10.5px] text-bone/80">
-        <span className="text-ember">fig. 2</span> me, minus the passport-photo blue
+        <span className="text-ember">fig. 2</span> me, mid-question
       </p>
     </motion.div>
   );

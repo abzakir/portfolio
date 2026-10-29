@@ -249,7 +249,7 @@ export const beforeFast = [
 ];
 
 export const about = {
-  photo: "/my-pic.jpeg",
+  photo: "/me.jpg",
   paragraphs: [
     "I'm Zakir. I grew up in Hyderabad, Sindh, and moved to Islamabad for computer science at FAST NUCES, where I'm in my second year.",
     "Most of what I build starts with wanting to understand something. The black hole began as a video I couldn't stop thinking about. MedNuskha began with a simpler question: would an elderly parent ever learn a new app? They wouldn't, so it lives in WhatsApp.",
